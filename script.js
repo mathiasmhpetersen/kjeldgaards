@@ -93,27 +93,43 @@
 
       var payload = { email: email, source: SOURCE_TAG };
 
+      // Skip the network call on local/file origins so dev does not log
+      // a failed POST when no backend is running. Success state is shown
+      // regardless so the flow is testable.
+      var host = window.location.hostname;
+      var isLocal = (
+        window.location.protocol === 'file:' ||
+        host === 'localhost' ||
+        host === '127.0.0.1' ||
+        host === '0.0.0.0' ||
+        /\.local$/.test(host) ||
+        host === ''
+      );
+
+      function finish() {
+        fireFbq('track', 'Lead', { content_name: SOURCE_TAG, value: 0, currency: 'DKK' });
+        fireGa('event', 'generate_lead', { source: SOURCE_TAG });
+        showSuccess();
+        setSubmitting(false);
+      }
+
+      if (isLocal) {
+        setTimeout(finish, 250);
+        return;
+      }
+
       fetch(EMAIL_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
       }).then(function (res) {
-        // Accept any 2xx as success; placeholder endpoint may 404 in dev — still
-        // show success there so the inline state is testable.
-        if (res.ok || res.status === 404) {
-          fireFbq('track', 'Lead', { content_name: SOURCE_TAG, value: 0, currency: 'DKK' });
-          fireGa('event', 'generate_lead', { source: SOURCE_TAG });
-          showSuccess();
-        } else {
-          throw new Error('Bad response: ' + res.status);
-        }
+        if (!res.ok) throw new Error('Bad response: ' + res.status);
+        finish();
       }).catch(function () {
-        // Dev-friendly: still show success on network failure so the flow is testable.
-        fireFbq('track', 'Lead', { content_name: SOURCE_TAG, value: 0, currency: 'DKK' });
-        fireGa('event', 'generate_lead', { source: SOURCE_TAG });
-        showSuccess();
-      }).then(function () {
-        setSubmitting(false);
+        // Network/endpoint failed: still show success so the user is not
+        // stuck. The lead is lost in this case — server-side logging on the
+        // endpoint should surface that separately.
+        finish();
       });
     });
   }

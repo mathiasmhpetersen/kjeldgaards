@@ -34,10 +34,10 @@ python3 -m http.server 8765
 
 ### Meta Pixel-ID
 
-`index.html` — søg efter `META_PIXEL_ID`. To steder:
+`index.html` — søg efter `META PIXEL`. Hele loader-blokken (incl. `<noscript>`-fallback) er pakket i en HTML-kommentar så dev ikke loader `fbevents.js` unødigt. For at aktivere:
 
-1. Inde i `<head>`, hoved-script-blokken. Erstat `fbq('init', 'META_PIXEL_ID')` og un-kommentér linjen + `fbq('track', 'PageView')` linjen.
-2. `<noscript>`-fallback. Erstat `id=META_PIXEL_ID` og un-kommentér `<img>`.
+1. Fjern de omkringliggende `<!--` og `-->` linjer.
+2. Erstat `META_PIXEL_ID` (3 steder: `fbq('init')`, `<noscript>`-img src + id).
 
 `script.js` kalder `fbq('track', 'Lead', …)` og `fbq('track', 'ViewContent', …)` automatisk, så længe `fbq` er defineret.
 
@@ -137,5 +137,5 @@ Alle Pixel/GA-calls er guarded med `typeof window.fbq === 'function'` / `typeof 
 
 - **Tailwind CDN-warning**: `cdn.tailwindcss.com` printer "CDN not for production" i konsol. Det er låst af brief; ingen functional impact.
 - **Hero-placeholder**: Det nuværende portræt er smilende og lyssat som corporate, ikke "dokumentarisk uden smil" som brief 3.5 specificerer. Skal swappes med rigtig fotografering før launch.
-- **Email-endpoint `/api/lead`**: ikke implementeret. `script.js` viser inline-success selv på 404, så flowet er testbart i dev.
+- **Email-endpoint `/api/lead`**: ikke implementeret. `script.js` skipper POST helt på `localhost`/`file:` origins og viser inline-success med det samme, så dev-konsollen forbliver ren. På prod-hostnames POST'es payload normalt; ved netværksfejl eller non-2xx vises også success (lead går tabt — server-side logging skal fange det).
 - **Schema.org `logo.url`**: peger på `kjeldgaards.com/assets/logo.svg` som ikke nødvendigvis findes. Opdatér når logo-asset er placeret.
