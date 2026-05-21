@@ -1,0 +1,292 @@
+/* Kjeldgaards advertorial — traette-paa-fotos
+ * Essay-style longread: single column, generous typography,
+ * one continuous voice from headline to CTA. NO pull-quotes,
+ * NO byline, NO category breadcrumbs.
+ */
+
+:root {
+  --bg: #FAF8F5;
+  --ink: #1A1A1A;
+  --ink-soft: #4A4A4A;
+  --ink-mute: #6B6B6B;
+  --accent: #6B4226;
+  --accent-dark: #582F1A;
+  --rule: #E5DFD6;
+  --highlight: #F4EFE6;
+  --strike: #9A9A9A;
+
+  --font-serif: 'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+  --measure: 640px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(17px, calc(1.1vw + 14px), 19px);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Single-column essay container */
+.article-body {
+  max-width: var(--measure);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.article-body > p {
+  margin: 0 0 1.5em 0;
+}
+
+.article-body p:last-child { margin-bottom: 0; }
+
+.article-body h2 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(25px, calc(1.4vw + 18px), 32px);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  margin: 2.6em 0 0.9em 0;
+  color: var(--ink);
+}
+
+.article-body em,
+.article-body i {
+  font-style: italic;
+}
+
+.article-body strong { font-weight: 700; }
+
+/* Top bar */
+.top-bar {
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+}
+
+.brand-mark {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* Hero / opening block */
+.hero-block {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 56px 22px 8px;
+}
+
+.editorial-h1 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(30px, calc(3vw + 20px), 50px);
+  line-height: 1.12;
+  letter-spacing: -0.018em;
+  margin: 0 0 0.7em 0;
+  color: var(--ink);
+}
+
+.deck {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(19px, calc(0.6vw + 16px), 22px);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 0.6em 0;
+}
+
+.deck em { font-style: italic; }
+
+/* Inline narrative figure — photo "drops in at a narrative pause" */
+.narrative-figure {
+  margin: 2.6em auto;
+  max-width: 760px;
+}
+
+.narrative-figure picture,
+.narrative-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.narrative-figure img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .narrative-figure img { aspect-ratio: 16 / 10; }
+}
+
+.narrative-figure figcaption {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-mute);
+  text-align: center;
+  margin: 12px auto 0;
+  max-width: 520px;
+  padding: 0 22px;
+}
+
+/* Drop cap on opening paragraph */
+.dropcap::first-letter {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 4.4em;
+  line-height: 0.86;
+  float: left;
+  margin: 0.08em 0.1em 0 -0.04em;
+  color: var(--ink);
+}
+
+/* CTA card — direct-product offer */
+.cta-card {
+  max-width: var(--measure);
+  margin: 3.2em auto 1.6em;
+  background: var(--highlight);
+  border-radius: 4px;
+  padding: 44px 24px;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .cta-card { padding: 52px 48px; }
+}
+
+.cta-headline {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(26px, calc(1.6vw + 18px), 34px);
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em 0;
+  color: var(--ink);
+}
+
+.cta-sub {
+  font-family: var(--font-serif);
+  font-size: clamp(17px, calc(0.4vw + 15px), 19px);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 0 0 1.4em 0;
+}
+
+.cta-price-row {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  margin: 0 0 1.8em 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cta-price-now {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(28px, calc(1.4vw + 20px), 34px);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.cta-price-was {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  color: var(--strike);
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+
+.cta-button {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  background: var(--accent);
+  color: #FFFFFF;
+  border: 0;
+  border-radius: 4px;
+  min-height: 56px;
+  padding: 18px 28px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 180ms ease, transform 180ms ease;
+  width: 100%;
+  max-width: 360px;
+}
+
+.cta-button:hover { background: var(--accent-dark); }
+
+.cta-button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.cta-button:active { transform: translateY(1px); }
+
+.cta-trust {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 1.6em 0 0 0;
+}
+
+.cta-trust .dot {
+  display: inline-block;
+  margin: 0 6px;
+  color: var(--rule);
+}
+
+/* Footer */
+.site-footer {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink-soft);
+  padding: 32px 22px 48px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+}
+
+.site-footer p { margin: 0 0 6px 0; }
+.site-footer a { color: var(--ink-soft); }
+
+/* Sponsored / disclaimer block */
+.disclaimer {
+  max-width: var(--measure);
+  margin: 2.4em auto 0;
+  padding: 18px 22px 0;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--ink-mute);
+  border-top: 1px solid var(--rule);
+}
+
+/* Smooth scroll honored unless user prefers reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
