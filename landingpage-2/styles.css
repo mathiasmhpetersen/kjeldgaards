@@ -234,30 +234,19 @@ body {
 .cta-card-dark {
   background: var(--accent);
   color: #FFFFFF;
-  border-radius: 20px;
+  border-radius: 12px;
   padding: 56px 32px;
   text-align: center;
 }
 
 @media (min-width: 640px) {
-  .cta-card-dark { padding: 72px 48px; }
-}
-
-.cta-label-light {
-  font-family: var(--font-sans);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--bg);
-  opacity: 0.7;
-  margin: 0 0 1.4em 0;
+  .cta-card-dark { padding: 72px 56px; }
 }
 
 .cta-headline-light {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: clamp(28px, calc(1.5vw + 20px), 36px);
+  font-size: clamp(26px, calc(1.3vw + 18px), 32px);
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: #FFFFFF;
@@ -272,7 +261,7 @@ body {
   color: #FFFFFF;
   opacity: 0.85;
   margin: 0 auto 2em;
-  max-width: 420px;
+  max-width: 480px;
 }
 
 .cta-actions {
@@ -288,7 +277,7 @@ body {
   .cta-actions {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px;
   }
 }
 
@@ -347,51 +336,6 @@ body {
   outline: 2px solid #FFFFFF;
   outline-offset: 3px;
 }
-
-.cta-micro-light {
-  font-family: var(--font-sans);
-  font-style: italic;
-  font-size: 12px;
-  color: #FFFFFF;
-  opacity: 0.6;
-  margin: 20px 0 0 0;
-}
-
-/* Social proof */
-.testimonial-block {
-  margin: 0 0 1.8em 0;
-  padding: 0;
-  border: 0;
-}
-
-.testimonial {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(18px, calc(0.5vw + 16px), 20px);
-  line-height: 1.5;
-  color: var(--ink);
-  margin: 0 0 0.4em 0;
-}
-
-.testimonial-attrib {
-  font-family: var(--font-sans);
-  font-style: normal;
-  font-size: 14px;
-  color: var(--ink-soft);
-  margin: 0;
-}
-
-.trustpilot-badge {
-  font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--ink);
-  margin: 1.4em 0 0 0;
-  padding: 14px 0 0;
-  border-top: 1px solid var(--rule);
-}
-
-.trustpilot-badge .star { color: #00B67A; }
 
 /* Section dividers */
 .section-rule {

@@ -47,12 +47,12 @@
     if (!link) return;
     link.addEventListener('click', function () {
       fireFbq('track', 'ViewContent', {
-        content_name: 'listicle_click_from_advertorial',
+        content_name: 'product_click_from_advertorial',
         content_category: 'advertorial_cta_primary',
         source_url: SOURCE_TAG
       });
       fireGa('event', 'select_content', {
-        content_type: 'listicle_click_from_advertorial',
+        content_type: 'product_click_from_advertorial',
         source: SOURCE_TAG
       });
     });
@@ -62,13 +62,13 @@
     var link = document.querySelector('[data-secondary-cta]');
     if (!link) return;
     link.addEventListener('click', function () {
-      fireFbq('track', 'ViewContent', {
-        content_name: 'soft_product_link_from_advertorial',
+      fireFbq('track', 'Lead', {
+        content_name: 'listicle_click_from_advertorial',
         content_category: 'advertorial_cta_secondary',
         source_url: SOURCE_TAG
       });
-      fireGa('event', 'select_content', {
-        content_type: 'soft_product_link_from_advertorial',
+      fireGa('event', 'generate_lead', {
+        link_type: 'listicle_click_from_advertorial',
         source: SOURCE_TAG
       });
     });
