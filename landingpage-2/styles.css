@@ -232,7 +232,7 @@ body {
 }
 
 .cta-card-dark {
-  background: var(--accent);
+  background: #337289;
   color: #FFFFFF;
   border-radius: 12px;
   padding: 56px 32px;
@@ -305,7 +305,7 @@ body {
 
 .cta-btn-primary {
   background: var(--bg);
-  color: var(--accent);
+  color: #337289;
   border: 1px solid var(--bg);
 }
 
