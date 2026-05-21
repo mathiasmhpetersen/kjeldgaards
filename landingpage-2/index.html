@@ -96,27 +96,21 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- ============================================================
-       META PIXEL — Un-comment the block below and replace `META_PIXEL_ID`
-       (3 places) with the actual ID. Until configured the entire loader
-       stays commented so dev does not load fbevents.js or log warnings.
-       `Lead` and `ViewContent` fire from script.js when fbq is defined.
-       ============================================================ -->
-  <!--
+  <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
       n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
       t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
       document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'META_PIXEL_ID');
+    fbq('init', '1689620499091643');
     fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" style="display:none" alt=""
-         src="https://www.facebook.com/tr?id=META_PIXEL_ID&ev=PageView&noscript=1" />
+         src="https://www.facebook.com/tr?id=1689620499091643&ev=PageView&noscript=1" />
   </noscript>
-  -->
+  <!-- End Meta Pixel Code -->
 
   <!-- ============================================================
        GA4 — Replace `GA4_ID` with the actual measurement ID (G-XXXX).
@@ -361,25 +355,30 @@
     </section>
 
     <!-- ============================================================
-         4.9 · PRIMÆR CTA — Soft click-through til listicle
+         4.9 · PRIMÆR CTA — Dark accent-card med to pill-knapper
          ============================================================ -->
-    <section class="article-body">
-      <div class="cta-card" data-primary-cta-card>
-        <p class="cta-label">Fortsæt læsningen</p>
+    <section class="cta-section">
+      <div class="cta-card-dark" data-primary-cta-card>
+        <p class="cta-label-light">Fortsæt læsningen</p>
 
-        <h2 class="cta-headline">14 specifikke ting Barrier Defense arbejder på — og hvordan</h2>
+        <h2 class="cta-headline-light">14 ting Barrier Defense løser</h2>
 
-        <p class="cta-body">De fleste der har læst hertil, har samme spørgsmål: hvad kan man så konkret gøre? Vi har samlet de 14 specifikke ting Barrier Defense Serum arbejder på — fra mørke rande under øjnene til ujævn tekstur og ændringer i hudbarrieren. Hver med den biologiske beskrivelse bag.</p>
+        <p class="cta-body-light">Den fulde liste over hvad Barrier Defense Serum arbejder på — fra mørke rande til ujævn tekstur. Med den biologiske beskrivelse bag hver enkelt.</p>
 
-        <p class="cta-body cta-body-soft">Det er ikke en købsside. Det er resten af forklaringen.</p>
+        <div class="cta-actions">
+          <a class="cta-btn cta-btn-primary"
+             href="https://kjeldgaards.com/listicle01/?utm_source=advertorial&utm_medium=onsite&utm_campaign=biologi-bag-traetheden&utm_content=primary_cta&utm_term=landingpage-2"
+             data-primary-cta>
+            Læs de 14 ting →
+          </a>
+          <a class="cta-btn cta-btn-secondary"
+             href="https://kjeldgaards.com/products/barrier-defense?utm_source=advertorial&utm_medium=onsite&utm_campaign=biologi-bag-traetheden&utm_content=secondary_cta&utm_term=landingpage-2"
+             data-secondary-cta>
+            Se Barrier Defense →
+          </a>
+        </div>
 
-        <a class="cta-button"
-           href="https://kjeldgaards.com/listicle01/?utm_source=advertorial&utm_medium=onsite&utm_campaign=biologi-bag-traetheden&utm_content=primary_cta&utm_term=landingpage-2"
-           data-primary-cta>
-          Se de 14 ting som Barrier Defense løser →
-        </a>
-
-        <p class="cta-micro">6 minutters læsning · Stadig ingen produktpitch</p>
+        <p class="cta-micro-light">6 minutters læsning · Ingen produktpitch</p>
       </div>
     </section>
 
@@ -407,16 +406,6 @@
       </blockquote>
 
       <p class="trustpilot-badge"><span class="star" aria-hidden="true">★</span> 4,7 / 5 baseret på 209 anmeldelser på Trustpilot</p>
-    </section>
-
-    <!-- ============================================================
-         4.11 · Sekundær CTA — diskret produktlink
-         ============================================================ -->
-    <section class="article-body">
-      <div class="secondary-cta">
-        <p>Eller hvis du allerede ved nok: <a href="https://kjeldgaards.com/products/barrier-defense?utm_source=advertorial&utm_medium=onsite&utm_campaign=biologi-bag-traetheden&utm_content=secondary_cta&utm_term=landingpage-2" data-secondary-cta>se Barrier Defense Serum →</a></p>
-        <small>Ingen rabat-pop-up. Bare produktsiden, hvis du vil derhen direkte.</small>
-      </div>
     </section>
 
   </main>

@@ -42,48 +42,17 @@
     figures.forEach(function (el) { observer.observe(el); });
   }
 
-  function initScrollDepthEvent() {
-    if (!('IntersectionObserver' in window)) return;
-
-    var marker = document.createElement('div');
-    marker.setAttribute('aria-hidden', 'true');
-    marker.style.cssText = 'position:absolute;left:0;width:1px;height:1px;pointer-events:none;';
-
-    function place() {
-      var pageHeight = document.documentElement.scrollHeight;
-      marker.style.top = Math.round(pageHeight * 0.75) + 'px';
-    }
-
-    document.body.appendChild(marker);
-    place();
-    window.addEventListener('resize', place, { passive: true });
-
-    var fired = false;
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting && !fired) {
-          fired = true;
-          fireFbq('track', 'ViewContent', { content_name: SOURCE_TAG + '_scroll_75' });
-          fireGa('event', 'scroll', { percent_scrolled: 75, source: SOURCE_TAG });
-          observer.disconnect();
-        }
-      });
-    }, { threshold: 0 });
-
-    observer.observe(marker);
-  }
-
   function initPrimaryCta() {
     var link = document.querySelector('[data-primary-cta]');
     if (!link) return;
     link.addEventListener('click', function () {
-      fireFbq('track', 'Lead', {
+      fireFbq('track', 'ViewContent', {
         content_name: 'listicle_click_from_advertorial',
         content_category: 'advertorial_cta_primary',
         source_url: SOURCE_TAG
       });
-      fireGa('event', 'generate_lead', {
-        link_type: 'listicle_click_from_advertorial',
+      fireGa('event', 'select_content', {
+        content_type: 'listicle_click_from_advertorial',
         source: SOURCE_TAG
       });
     });
@@ -93,14 +62,20 @@
     var link = document.querySelector('[data-secondary-cta]');
     if (!link) return;
     link.addEventListener('click', function () {
-      fireFbq('track', 'ViewContent', { content_name: 'soft_product_link_from_advertorial' });
-      fireGa('event', 'click', { link_type: 'soft_product_link_from_advertorial' });
+      fireFbq('track', 'ViewContent', {
+        content_name: 'soft_product_link_from_advertorial',
+        content_category: 'advertorial_cta_secondary',
+        source_url: SOURCE_TAG
+      });
+      fireGa('event', 'select_content', {
+        content_type: 'soft_product_link_from_advertorial',
+        source: SOURCE_TAG
+      });
     });
   }
 
   function init() {
     initFadeIn();
-    initScrollDepthEvent();
     initPrimaryCta();
     initSecondaryCta();
   }
