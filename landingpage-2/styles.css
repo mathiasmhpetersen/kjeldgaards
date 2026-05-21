@@ -260,8 +260,8 @@ body {
   line-height: 1.5;
   color: #FFFFFF;
   opacity: 0.85;
-  margin: 0 auto 2em;
-  max-width: 480px;
+  margin: 20px auto 0;
+  max-width: 460px;
 }
 
 .cta-actions {
@@ -270,7 +270,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin: 0 auto;
+  margin: 28px auto 0;
 }
 
 @media (min-width: 640px) {
@@ -278,6 +278,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 12px;
+    margin-top: 32px;
   }
 }
 
