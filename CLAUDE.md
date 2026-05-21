@@ -1,7 +1,8 @@
-# Kjeldgaards Advertorial — CLAUDE.md
+# Kjeldgaards Landingpages — CLAUDE.md
 
-Standalone advertorial-landingsside for Kjeldgaards Barrier Defense Serum.
-URL: `kjeldgaards.com/biologi-bag-traetheden`. Top-of-funnel landing for Meta-annoncer mod danske kvinder 45–60 i overgangsalder.
+Subdomæne `lp.kjeldgaards.com` huser alle advertorial- og campaign-landingsider. Roden (`lp.kjeldgaards.com/`) er en intern hub (noindex) der lister aktive sider. Hver landingpage bor i sin egen slug-mappe, fx `lp.kjeldgaards.com/biologi-bag-traetheden`.
+
+Første landingpage: Biologi bag trætheden — top-of-funnel for Meta-annoncer mod danske kvinder 45–60 i overgangsalder. Kjeldgaards Barrier Defense Serum.
 
 ## Sandheds-hierarki ved konflikt
 
@@ -14,12 +15,13 @@ Hvis noget konflikter, slå op i research-dokumenterne — ikke i intuition.
 
 ## Locked tech-stack (rør ikke uden eksplicit accept)
 
-- Vanilla HTML5, én fil (`index.html`)
+- Vanilla HTML5, én fil per landingpage (`<slug>/index.html`)
 - Tailwind CSS via CDN (`https://cdn.tailwindcss.com`) — INGEN build step
-- Custom CSS i `styles.css` (typografi, drop cap, pull-quotes, accent, farver)
-- Vanilla JS i `script.js` — ingen frameworks
-- Deploy-target: Vercel statisk
-- Skal kunne åbnes ved at dobbeltklikke `index.html`
+- Custom CSS i `<slug>/styles.css` (typografi, drop cap, pull-quotes, accent, farver)
+- Vanilla JS i `<slug>/script.js` — ingen frameworks
+- Hub-siden i roden (`/index.html`) er standalone med inline CSS, ingen Tailwind
+- Deploy-target: Vercel statisk (`cleanUrls: true` → `/biologi-bag-traetheden` serverer `/biologi-bag-traetheden/index.html`)
+- Skal kunne åbnes ved at dobbeltklikke `<slug>/index.html` lokalt
 
 Tailwind CDN advarer i konsol om "not for production". Det er accepteret af bruger.
 
@@ -91,13 +93,22 @@ Schwartz stadie 4–5. Mekanisme-dramatisering (indkapslet retinol som "drypvand
 ## Filstruktur
 
 ```
-index.html      — Hele advertorialen, 11 sektioner
-styles.css      — Typografi, farver, layout
-script.js       — Email, scroll observer, Pixel/GA4 events
-vercel.json     — Cache + security headers
-CLAUDE.md       — Denne fil
-README.md       — Onboarding + deploy
-/research/      — 4 docs (sandheds-kilde, rør ikke ved disse)
-/assets/        — hero-kvinde-50.{webp,jpg}, og-image.jpg
-/screenshots/   — Playwright output
+index.html                       — Hub-side (intern, noindex). Lister alle landingpages.
+vercel.json                      — Cache + security headers, cleanUrls
+CLAUDE.md                        — Denne fil
+README.md                        — Onboarding + deploy
+/biologi-bag-traetheden/
+    index.html                   — Hele advertorialen, 11 sektioner
+    styles.css                   — Typografi, farver, layout
+    script.js                    — Email, scroll observer, Pixel/GA4 events
+    /assets/                     — hero-kvinde-50.{webp,jpg}, og-image.jpg
+/research/                       — 4 docs (sandheds-kilde, rør ikke ved disse)
+/screenshots/                    — Playwright output
 ```
+
+### Tilføj ny landingpage
+
+1. Opret mappe `/<slug>/` med `index.html`, evt. `styles.css`, `script.js`, `assets/`
+2. Tilføj et `<a class="card">`-kort i `/index.html` under "Aktive landingpages"
+3. Sæt canonical/OG URLs i den nye `index.html` til `https://lp.kjeldgaards.com/<slug>`
+4. `cleanUrls` håndterer routing — sidens URL bliver `lp.kjeldgaards.com/<slug>`
