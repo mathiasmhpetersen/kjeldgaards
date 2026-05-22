@@ -261,7 +261,7 @@ body {
   line-height: 1.2;
   letter-spacing: -0.005em;
   color: var(--ink);
-  margin: 0 0 20px 0;
+  margin: 40px 0 20px 0;
 }
 
 .editorial-cta-body {
