@@ -159,4 +159,120 @@
   /* ---------- Mark body for sticky-buy padding ---------- */
   if (stickyBar) document.body.classList.add('has-sticky');
 
+  /* ---------- Reduced-motion flag ---------- */
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Horizontal carousels (ingredients, UGC) ---------- */
+  document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+    var track = carousel.querySelector('[data-track]');
+    if (!track) return;
+    var prevBtn = carousel.querySelector('[data-prev]');
+    var nextBtn = carousel.querySelector('[data-next]');
+    var edgeL = carousel.querySelector('.carousel-edge.left');
+    var edgeR = carousel.querySelector('.carousel-edge.right');
+
+    function stepSize() {
+      var card = track.firstElementChild;
+      if (!card) return 280;
+      var gap = parseInt(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '18', 10) || 18;
+      return card.getBoundingClientRect().width + gap;
+    }
+    function maxScroll() { return track.scrollWidth - track.clientWidth; }
+
+    function updateEdges() {
+      var x = track.scrollLeft;
+      var max = maxScroll();
+      var atStart = x <= 2;
+      var atEnd = x >= max - 2;
+      if (edgeL) edgeL.classList.toggle('is-hidden', atStart);
+      if (edgeR) edgeR.classList.toggle('is-hidden', atEnd);
+      if (prevBtn) prevBtn.disabled = atStart;
+      if (nextBtn) nextBtn.disabled = atEnd;
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () {
+      track.scrollBy({ left: -stepSize(), behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+    if (nextBtn) nextBtn.addEventListener('click', function () {
+      track.scrollBy({ left: stepSize(), behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+
+    track.addEventListener('scroll', updateEdges, { passive: true });
+    window.addEventListener('resize', updateEdges, { passive: true });
+    updateEdges();
+
+    /* Pointer drag-to-scroll */
+    var isDown = false, startX = 0, startLeft = 0, moved = false;
+    track.addEventListener('pointerdown', function (e) {
+      isDown = true; moved = false;
+      startX = e.clientX;
+      startLeft = track.scrollLeft;
+      track.classList.add('is-dragging');
+    });
+    track.addEventListener('pointermove', function (e) {
+      if (!isDown) return;
+      var dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) moved = true;
+      track.scrollLeft = startLeft - dx;
+    });
+    function endDrag() {
+      if (!isDown) return;
+      isDown = false;
+      track.classList.remove('is-dragging');
+    }
+    track.addEventListener('pointerup', endDrag);
+    track.addEventListener('pointercancel', endDrag);
+    track.addEventListener('pointerleave', endDrag);
+    /* Prevent click navigation right after a drag */
+    track.addEventListener('click', function (e) {
+      if (moved) { e.preventDefault(); }
+    }, true);
+  });
+
+  /* ---------- Count-up on stats / timeline day numbers ---------- */
+  var countEls = document.querySelectorAll('[data-count-to]:not([data-count-prefix])');
+  function animateCount(el) {
+    var target = parseFloat(el.getAttribute('data-count-to'));
+    if (isNaN(target)) return;
+    if (reduceMotion) { el.textContent = String(target); return; }
+    var dur = 1100, start = null;
+    function tick(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = String(Math.round(target * eased));
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = String(target);
+    }
+    requestAnimationFrame(tick);
+  }
+  if ('IntersectionObserver' in window && countEls.length) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          cio.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    countEls.forEach(function (el) { cio.observe(el); });
+  }
+
+  /* ---------- Gentle hero parallax ---------- */
+  var parallaxImg = document.querySelector('[data-parallax] img');
+  if (parallaxImg && !reduceMotion) {
+    var ticking = false;
+    function applyParallax() {
+      var y = window.scrollY || window.pageYOffset;
+      var shift = Math.max(-22, Math.min(0, -y * 0.045));
+      parallaxImg.style.transform = 'translateY(' + shift + 'px) scale(1.04)';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { window.requestAnimationFrame(applyParallax); ticking = true; }
+    }, { passive: true });
+    applyParallax();
+  }
+
 })();
