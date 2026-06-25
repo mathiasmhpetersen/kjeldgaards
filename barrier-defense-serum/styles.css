@@ -355,6 +355,23 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 }
 .stars { color: var(--gold); letter-spacing: 0.05em; font-size: 16px; }
 
+/* Qualifier pill (quiet, marine on azure) */
+.qualifier {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 22px;
+  padding: 6px 13px 6px 11px;
+  background: var(--azure-mist);
+  border: 1px solid #D7E4EE;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--marine-700);
+}
+.qualifier svg { width: 15px; height: 15px; flex: 0 0 auto; color: var(--marine); }
+
 .benefits {
   list-style: none;
   padding: 0;
@@ -373,6 +390,24 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   left: 0; top: 12px;
   width: 14px; height: 1px;
   background: var(--gold);
+}
+
+/* Checkmark variant (Sunster-style: ✓ + bold lead) */
+.benefits--check li {
+  padding-left: 28px;
+  margin-bottom: 11px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.benefits--check li strong { color: var(--ink); font-weight: 600; }
+.benefits--check li::before {
+  content: "";
+  top: 1px;
+  width: 18px;
+  height: 18px;
+  background: no-repeat center / contain
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%231E6F9F' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
 }
 
 /* === Buy box === */
