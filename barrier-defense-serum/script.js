@@ -6,10 +6,11 @@
 (function () {
   'use strict';
 
-  /* ---------- Config ---------- */
+  /* ---------- Config (pricing — adapt of v3 /lib/pricing.ts to static) ---------- */
   var CHECKOUT_URL = 'https://kjeldgaards.com/checkout/';
   var CHECKOUT_URL_2PACK = 'https://kjeldgaards.com/checkout/';
-  var PRICE = 470;
+  var PRICE = 470;        // 1 flaske
+  var PRICE_2PACK = 749;  // 2 flasker — den fulde 60-dages kur
 
   /* ---------- Header scroll state ---------- */
   var header = document.querySelector('.site-header');
@@ -74,7 +75,7 @@
             content_name: 'Barrier Defense Serum',
             content_ids: [pack],
             num_items: pack === '2-pack' ? 2 : 1,
-            value: pack === '2-pack' ? PRICE * 2 : PRICE,
+            value: pack === '2-pack' ? PRICE_2PACK : PRICE,
             currency: 'DKK'
           });
         }
@@ -83,7 +84,7 @@
         if (typeof window.gtag === 'function') {
           window.gtag('event', 'begin_checkout', {
             currency: 'DKK',
-            value: pack === '2-pack' ? PRICE * 2 : PRICE,
+            value: pack === '2-pack' ? PRICE_2PACK : PRICE,
             items: [{ item_name: 'Barrier Defense Serum', quantity: pack === '2-pack' ? 2 : 1 }]
           });
         }
@@ -95,7 +96,7 @@
     });
   });
 
-  /* ---------- FAQ accordion ---------- */
+  /* ---------- FAQ accordion (main + mini under buy box) ---------- */
   document.querySelectorAll('.faq-q').forEach(function (q) {
     q.addEventListener('click', function () {
       var item = q.closest('.faq-item');
@@ -104,6 +105,30 @@
       q.setAttribute('aria-expanded', !isOpen);
     });
   });
+  document.querySelectorAll('.mini-faq-q').forEach(function (q) {
+    q.addEventListener('click', function () {
+      var item = q.closest('.mini-faq-item');
+      var isOpen = item.classList.contains('is-open');
+      item.classList.toggle('is-open', !isOpen);
+      q.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  /* ---------- Auto-rotating USP row ---------- */
+  (function () {
+    var rotator = document.querySelector('[data-usp]');
+    if (!rotator) return;
+    var items = rotator.querySelectorAll('.usp');
+    if (items.length < 2) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var i = 0;
+    setInterval(function () {
+      items[i].classList.remove('is-active');
+      i = (i + 1) % items.length;
+      items[i].classList.add('is-active');
+    }, 2600);
+  })();
 
   /* ---------- Video click-to-play ---------- */
   document.querySelectorAll('.video-card').forEach(function (card) {
