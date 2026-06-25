@@ -61,8 +61,28 @@
   <!-- Tailwind via CDN (LOCKED per brief) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/barrier-defense-serum/styles.css" />
+  <!-- Custom CSS (versioned to bust the 1yr cache on deploy) -->
+  <link rel="stylesheet" href="/barrier-defense-serum/styles.css?v=3" />
+
+  <!-- Critical guard: lives in the always-fresh HTML so a stale/cached
+       stylesheet can never blow up inline SVGs or the rotator again. -->
+  <style>
+    .derm-line svg,.about-strip svg{width:18px;height:18px;flex:0 0 auto}
+    .option-guarantee svg{width:14px;height:14px;flex:0 0 auto}
+    .concern .tick svg{width:14px;height:14px}
+    .yes svg,.no svg{width:18px;height:18px}
+    .ingredient .ing-visual svg{width:56%;height:56%}
+    .howto-step .step-visual svg{width:48%;height:48%}
+    .carousel-btn svg{width:20px;height:20px}
+    .float-pill .seal-mini{width:18px;height:18px}
+    .usp-rotator{position:relative;overflow:hidden}
+    .usp{position:absolute;left:0;top:0;opacity:0}
+    .usp.is-active{opacity:1}
+    .mini-faq-a{max-height:0;overflow:hidden}
+    .mini-faq-item.is-open .mini-faq-a{max-height:400px}
+    .info .tooltip{position:absolute;opacity:0;visibility:hidden}
+    .info:hover .tooltip,.info:focus-within .tooltip{opacity:1;visibility:visible}
+  </style>
 
   <!-- ============================================================
        META PIXEL — Replace `META_PIXEL_ID` (3 places) to activate.
@@ -1059,6 +1079,6 @@
     <a href="https://kjeldgaards.com/checkout/" class="cta" data-cta data-current-pack="2-pack">Læg i kurven</a>
   </div>
 
-  <script src="/barrier-defense-serum/script.js" defer></script>
+  <script src="/barrier-defense-serum/script.js?v=3" defer></script>
 </body>
 </html>
