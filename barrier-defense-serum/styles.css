@@ -324,7 +324,11 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 }
 
 .buy-col h1 {
-  margin-bottom: 0.45em;
+  font-size: clamp(2.55rem, 5vw, 4.1rem);
+  font-weight: 600;
+  line-height: 1.0;
+  letter-spacing: -0.028em;
+  margin: 0 0 0.26em;
 }
 .hero-eyebrow {
   font-size: 11px;
@@ -336,13 +340,18 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 }
 .hero-sub {
   font-family: var(--font-serif);
-  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
-  font-style: italic;
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  font-style: normal;
   color: var(--ink-soft);
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.25;
   margin: 0 0 22px;
-  max-width: 56ch;
+  max-width: 40ch;
+}
+.hero-sub em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--marine);
 }
 
 .star-line {
