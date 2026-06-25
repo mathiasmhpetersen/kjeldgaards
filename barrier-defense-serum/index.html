@@ -62,7 +62,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom CSS (versioned to bust the 1yr cache on deploy) -->
-  <link rel="stylesheet" href="/barrier-defense-serum/styles.css?v=3" />
+  <link rel="stylesheet" href="/barrier-defense-serum/styles.css?v=4" />
 
   <!-- Critical guard: lives in the always-fresh HTML so a stale/cached
        stylesheet can never blow up inline SVGs or the rotator again. -->
@@ -74,6 +74,7 @@
     .ingredient .ing-visual svg{width:56%;height:56%}
     .howto-step .step-visual svg{width:48%;height:48%}
     .carousel-btn svg{width:20px;height:20px}
+    .pay-logo{height:30px;width:auto}
     .float-pill .seal-mini{width:18px;height:18px}
     .usp-rotator{position:relative;overflow:hidden}
     .usp{position:absolute;left:0;top:0;opacity:0}
@@ -274,10 +275,10 @@
               <a href="https://kjeldgaards.com/checkout/" class="cta" data-cta data-current-pack="2-pack">Læg i kurven</a>
 
               <div class="pay-row" aria-label="Betalingsmuligheder">
-                <span class="pay-chip">MobilePay</span>
-                <span class="pay-chip">Visa</span>
-                <span class="pay-chip">Mastercard</span>
-                <span class="pay-chip">Apple Pay</span>
+                <img class="pay-logo" src="/barrier-defense-serum/assets/pay/mobilepay.png" alt="MobilePay" width="62" height="44" loading="lazy" decoding="async" />
+                <img class="pay-logo" src="/barrier-defense-serum/assets/pay/visa.png" alt="Visa" width="70" height="44" loading="lazy" decoding="async" />
+                <img class="pay-logo" src="/barrier-defense-serum/assets/pay/mastercard.svg" alt="Mastercard" width="55" height="44" loading="lazy" decoding="async" />
+                <img class="pay-logo" src="/barrier-defense-serum/assets/pay/apple-pay.png" alt="Apple Pay" width="68" height="44" loading="lazy" decoding="async" />
               </div>
               <p class="delivery-line"><span class="live-dot" aria-hidden="true"></span> Stor efterspørgsel · 3–5 hverdages levering</p>
             </div>
@@ -1079,6 +1080,6 @@
     <a href="https://kjeldgaards.com/checkout/" class="cta" data-cta data-current-pack="2-pack">Læg i kurven</a>
   </div>
 
-  <script src="/barrier-defense-serum/script.js?v=3" defer></script>
+  <script src="/barrier-defense-serum/script.js?v=4" defer></script>
 </body>
 </html>
