@@ -300,4 +300,151 @@
     applyParallax();
   }
 
+  /* ---------- Product gallery + lightbox ---------- */
+  (function () {
+    var gallery = document.querySelector('[data-gallery]');
+    if (!gallery) return;
+    var lightbox = document.querySelector('[data-lightbox]');
+    var mainWrap = gallery.querySelector('[data-gmain]');
+    var mainImg  = gallery.querySelector('[data-gmainimg]');
+    var thumbs   = [].slice.call(gallery.querySelectorAll('[data-gthumbs] .thumb'));
+
+    var images = thumbs.map(function (t) {
+      return {
+        full:   t.getAttribute('data-full'),
+        alt:    t.getAttribute('data-alt') || '',
+        bottle: t.getAttribute('data-bottle') === '1'
+      };
+    });
+    if (!images.length) return;
+
+    var index = 0;
+    var lbOpen = false;
+    var lastFocus = null;
+
+    // graphics with baked-in text should never be cropped
+    function isContain(i) { return /reviews|klinisk|before-after/.test(images[i].full); }
+
+    function fadeSwap(el, src, alt) {
+      if (reduceMotion) { el.src = src; el.alt = alt; return; }
+      el.style.opacity = '0';
+      var pre = new Image();
+      var done = function () {
+        el.src = src; el.alt = alt;
+        window.requestAnimationFrame(function () { el.style.opacity = ''; });
+      };
+      pre.onload = done; pre.onerror = done;
+      pre.src = src;
+    }
+
+    var lbImg     = lightbox && lightbox.querySelector('[data-lbimg]');
+    var lbCounter = lightbox && lightbox.querySelector('[data-lbcounter]');
+
+    function updateLb() {
+      if (!lbImg) return;
+      fadeSwap(lbImg, images[index].full, images[index].alt);
+      if (lbCounter) lbCounter.textContent = (index + 1) + ' / ' + images.length;
+    }
+
+    function render(i, syncLb) {
+      i = (i % images.length + images.length) % images.length;
+      index = i;
+      fadeSwap(mainImg, images[i].full, images[i].alt);
+      mainWrap.classList.toggle('is-contain', isContain(i));
+      mainWrap.classList.toggle('show-pills', !!images[i].bottle);
+      thumbs.forEach(function (t, ti) {
+        t.classList.toggle('is-active', ti === i);
+        t.setAttribute('aria-current', ti === i ? 'true' : 'false');
+      });
+      if (lbOpen && syncLb !== false) updateLb();
+    }
+    function step(delta) { render(index + delta); }
+
+    /* thumbnails select the main image */
+    thumbs.forEach(function (t, ti) {
+      t.addEventListener('click', function (e) { e.preventDefault(); render(ti); });
+    });
+
+    /* gallery arrows */
+    var gPrev = gallery.querySelector('[data-gprev]');
+    var gNext = gallery.querySelector('[data-gnext]');
+    if (gPrev) gPrev.addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+    if (gNext) gNext.addEventListener('click', function (e) { e.stopPropagation(); step(1); });
+
+    /* shared pointer drag helper (swipe + tap detection) */
+    function attachDrag(el, opts) {
+      var down = false, startX = 0, startY = 0, moved = false, dx = 0;
+      el.addEventListener('pointerdown', function (e) {
+        if (e.button && e.button !== 0) return;
+        if (opts.ignore && e.target.closest(opts.ignore)) return;
+        down = true; moved = false; startX = e.clientX; startY = e.clientY; dx = 0;
+        el.classList.add('is-dragging');
+      });
+      el.addEventListener('pointermove', function (e) {
+        if (!down) return;
+        dx = e.clientX - startX;
+        if (Math.abs(dx) > 6 || Math.abs(e.clientY - startY) > 6) moved = true;
+      });
+      function end() {
+        if (!down) return;
+        down = false; el.classList.remove('is-dragging');
+        if (moved && Math.abs(dx) > 45) opts.onSwipe(dx < 0 ? 1 : -1);
+        else if (!moved && opts.onTap) opts.onTap();
+      }
+      el.addEventListener('pointerup', end);
+      el.addEventListener('pointerleave', end);
+      el.addEventListener('pointercancel', function () { down = false; el.classList.remove('is-dragging'); });
+      el.addEventListener('dragstart', function (e) { e.preventDefault(); });
+    }
+
+    /* main image: drag to swipe, tap to open lightbox (ignore arrow clicks) */
+    attachDrag(mainWrap, {
+      ignore: '.gallery-nav',
+      onSwipe: function (dir) { step(dir); },
+      onTap: function () { openLb(index); }
+    });
+
+    /* ---- lightbox ---- */
+    function openLb(i) {
+      if (!lightbox) return;
+      render(i, false);
+      lbOpen = true;
+      lastFocus = document.activeElement;
+      lightbox.hidden = false;
+      document.body.classList.add('lb-open');
+      updateLb();
+      window.requestAnimationFrame(function () { lightbox.classList.add('is-open'); });
+      var closeBtn = lightbox.querySelector('[data-lbclose]');
+      if (closeBtn && closeBtn.focus) closeBtn.focus();
+    }
+    function closeLb() {
+      if (!lightbox || !lbOpen) return;
+      lbOpen = false;
+      lightbox.classList.remove('is-open');
+      document.body.classList.remove('lb-open');
+      setTimeout(function () { if (!lbOpen) lightbox.hidden = true; }, reduceMotion ? 0 : 240);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    if (lightbox) {
+      [].slice.call(lightbox.querySelectorAll('[data-lbclose]')).forEach(function (el) {
+        el.addEventListener('click', function (e) { e.stopPropagation(); closeLb(); });
+      });
+      var lbPrev = lightbox.querySelector('[data-lbprev]');
+      var lbNext = lightbox.querySelector('[data-lbnext]');
+      if (lbPrev) lbPrev.addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+      if (lbNext) lbNext.addEventListener('click', function (e) { e.stopPropagation(); step(1); });
+
+      document.addEventListener('keydown', function (e) {
+        if (!lbOpen) return;
+        if (e.key === 'Escape') closeLb();
+        else if (e.key === 'ArrowLeft') step(-1);
+        else if (e.key === 'ArrowRight') step(1);
+      });
+
+      var lbStage = lightbox.querySelector('[data-lbstage]');
+      if (lbStage) attachDrag(lbStage, { onSwipe: function (dir) { step(dir); } });
+    }
+  })();
+
 })();
