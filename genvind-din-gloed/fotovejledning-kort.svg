@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Trykklar fotovejledning til kortet i pakken.
+     Format: A6 stående, 105 × 148 mm. Enhed = mm. Tilføj selv 3 mm beskæring
+     ved tryk (så 111 × 154 mm). Fonts er konverteret til systemnavne; ombryd
+     til outlines før tryk, hvis trykkeriet kræver det. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="105mm" height="148mm" viewBox="0 0 105 148">
+  <rect width="105" height="148" fill="#EFEEE8"/>
+  <rect x="6" y="6" width="93" height="136" fill="none" stroke="#CFCBBF" stroke-width="0.3"/>
+
+  <text x="12" y="20" font-family="Georgia, 'Times New Roman', serif" font-size="7" fill="#16232B">Sådan tager du de to billeder</text>
+  <text x="12" y="26.5" font-family="Arial, sans-serif" font-size="3.1" fill="#4A5A63">Billede nr. 2 skal tages præcis som billede nr. 1.</text>
+  <line x1="12" y1="30" x2="93" y2="30" stroke="#CFCBBF" stroke-width="0.3"/>
+
+  <!-- Step template: number, title, line -->
+  <g font-family="Arial, sans-serif">
+    <!-- 1 -->
+    <circle cx="14.5" cy="39" r="3.4" fill="none" stroke="#A98A4B" stroke-width="0.4"/>
+    <text x="14.5" y="40.4" font-size="3.4" fill="#A98A4B" text-anchor="middle">1</text>
+    <text x="21" y="38" font-size="3.7" font-weight="700" fill="#16232B">Samme sted</text>
+    <text x="21" y="42.6" font-size="3" fill="#4A5A63">Ved et vindue med dagslys, ansigtet mod vinduet.</text>
+    <text x="21" y="46.4" font-size="3" fill="#4A5A63">Husk hvor du står — samme sted om 60 dage.</text>
+
+    <!-- 2 -->
+    <circle cx="14.5" cy="59" r="3.4" fill="none" stroke="#A98A4B" stroke-width="0.4"/>
+    <text x="14.5" y="60.4" font-size="3.4" fill="#A98A4B" text-anchor="middle">2</text>
+    <text x="21" y="58" font-size="3.7" font-weight="700" fill="#16232B">Samme lys</text>
+    <text x="21" y="62.6" font-size="3" fill="#4A5A63">Dagslys fra vinduet, ikke direkte sol. Tænd</text>
+    <text x="21" y="66.4" font-size="3" fill="#4A5A63">ikke loftslampen.</text>
+
+    <!-- 3 -->
+    <circle cx="14.5" cy="79" r="3.4" fill="none" stroke="#A98A4B" stroke-width="0.4"/>
+    <text x="14.5" y="80.4" font-size="3.4" fill="#A98A4B" text-anchor="middle">3</text>
+    <text x="21" y="78" font-size="3.7" font-weight="700" fill="#16232B">Samme tidspunkt</text>
+    <text x="21" y="82.6" font-size="3" fill="#4A5A63">Om morgenen, før du gør noget ved ansigtet.</text>
+    <text x="21" y="86.4" font-size="3" fill="#4A5A63">Ren hud, ingen makeup, håret væk.</text>
+
+    <!-- 4 -->
+    <circle cx="14.5" cy="99" r="3.4" fill="none" stroke="#A98A4B" stroke-width="0.4"/>
+    <text x="14.5" y="100.4" font-size="3.4" fill="#A98A4B" text-anchor="middle">4</text>
+    <text x="21" y="98" font-size="3.7" font-weight="700" fill="#16232B">Samme position</text>
+    <text x="21" y="102.6" font-size="3" fill="#4A5A63">Telefonen i øjenhøjde, en armslængde væk. Lige</text>
+    <text x="21" y="106.4" font-size="3" fill="#4A5A63">forfra, neutralt ansigt — et smil ændrer linjerne.</text>
+
+    <!-- 5 -->
+    <circle cx="14.5" cy="119" r="3.4" fill="none" stroke="#A98A4B" stroke-width="0.4"/>
+    <text x="14.5" y="120.4" font-size="3.4" fill="#A98A4B" text-anchor="middle">5</text>
+    <text x="21" y="118" font-size="3.7" font-weight="700" fill="#16232B">Slå skønhedsfilteret fra</text>
+    <text x="21" y="122.6" font-size="3" fill="#4A5A63">iPhone: Fotografisk stil. Samsung: ansigts-</text>
+    <text x="21" y="126.4" font-size="3" fill="#4A5A63">retouchering. Sluk det, og brug ikke portrættilstand.</text>
+  </g>
+
+  <line x1="12" y1="133" x2="93" y2="133" stroke="#CFCBBF" stroke-width="0.3"/>
+  <text x="12" y="139" font-family="Arial, sans-serif" font-size="2.8" fill="#4A5A63">Vi sender dig et link, både til det første og det sidste billede. Du skal ikke oprette noget.</text>
+</svg>
