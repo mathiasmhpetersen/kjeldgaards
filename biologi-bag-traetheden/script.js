@@ -8,13 +8,6 @@
   var SOURCE_TAG = 'biologi-bag-traetheden';
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-  function fireFbq() {
-    if (typeof window.fbq === 'function') {
-      try { window.fbq.apply(null, arguments); }
-      catch (e) { /* swallow */ }
-    }
-  }
-
   function fireGa() {
     if (typeof window.gtag === 'function') {
       try { window.gtag.apply(null, arguments); }
@@ -107,7 +100,6 @@
       );
 
       function finish() {
-        fireFbq('track', 'Lead', { content_name: SOURCE_TAG, value: 0, currency: 'DKK' });
         fireGa('event', 'generate_lead', { source: SOURCE_TAG });
         showSuccess();
         setSubmitting(false);
@@ -176,7 +168,6 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting && !fired) {
           fired = true;
-          fireFbq('track', 'ViewContent', { content_name: SOURCE_TAG + '_scroll_75' });
           fireGa('event', 'scroll', { percent_scrolled: 75, source: SOURCE_TAG });
           observer.disconnect();
         }
@@ -190,7 +181,6 @@
     var link = document.querySelector('[data-secondary-cta]');
     if (!link) return;
     link.addEventListener('click', function () {
-      fireFbq('track', 'ViewContent', { content_name: 'soft_product_link_from_advertorial' });
       fireGa('event', 'click', { link_type: 'soft_product_link_from_advertorial' });
     });
   }

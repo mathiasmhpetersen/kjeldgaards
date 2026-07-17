@@ -7,13 +7,6 @@
 
   var SOURCE_TAG = 'traette-paa-fotos';
 
-  function fireFbq() {
-    if (typeof window.fbq === 'function') {
-      try { window.fbq.apply(null, arguments); }
-      catch (e) { /* swallow */ }
-    }
-  }
-
   function fireGa() {
     if (typeof window.gtag === 'function') {
       try { window.gtag.apply(null, arguments); }
@@ -42,7 +35,6 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting && !fired) {
           fired = true;
-          fireFbq('track', 'ViewContent', { content_name: SOURCE_TAG + '_scroll_75' });
           fireGa('event', 'scroll', { percent_scrolled: 75, source: SOURCE_TAG });
           observer.disconnect();
         }
@@ -56,12 +48,6 @@
     var link = document.querySelector('[data-primary-cta]');
     if (!link) return;
     link.addEventListener('click', function () {
-      fireFbq('track', 'InitiateCheckout', {
-        content_name: SOURCE_TAG + '_cta_click',
-        content_ids: ['barrier-defense-serum'],
-        value: 399.50,
-        currency: 'DKK'
-      });
       fireGa('event', 'select_promotion', {
         promotion_name: 'barrier_defense_60_day',
         source: SOURCE_TAG
