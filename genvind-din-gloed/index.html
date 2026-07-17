@@ -3,449 +3,461 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#EFEEE8" />
+  <meta name="theme-color" content="#102A43" />
   <meta name="format-detection" content="telephone=no" />
 
-  <title>Genvind din glød på 8 uger — kun for 100 danske kvinder | Kjeldgaards</title>
-  <meta name="description" content="Vi søger 100 danske kvinder, der vil bruge Barrier Defense i 60 dage og tage et billede før og efter. 749 kr for to flasker. Er du tilfreds, får du to serummer gratis. Er du ikke, får du pengene tilbage." />
+  <title>Genvind din glød på 60 dage — kun for 100 danske kvinder | Kjeldgaards</title>
+  <meta name="description" content="Kun for 100 danske kvinder: to flasker Barrier Defense i 60 dage, 749 kr. Er du tilfreds, får du to serummer gratis. Er du ikke, får du alle dine penge tilbage." />
+
   <link rel="canonical" href="https://lp.kjeldgaards.com/genvind-din-gloed" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="product" />
   <meta property="og:site_name" content="Kjeldgaards" />
   <meta property="og:locale" content="da_DK" />
   <meta property="og:url" content="https://lp.kjeldgaards.com/genvind-din-gloed" />
-  <meta property="og:title" content="Genvind din glød på 8 uger — kun for 100 danske kvinder" />
-  <meta property="og:description" content="Vi søger 100 danske kvinder, der vil bruge Barrier Defense i 60 dage og tage et billede før og efter." />
+  <meta property="og:title" content="Genvind din glød på 60 dage — kun for 100 danske kvinder" />
+  <meta property="og:description" content="To flasker Barrier Defense i 60 dage, 749 kr. Er du tilfreds, får du to serummer gratis. Er du ikke, får du alle dine penge tilbage." />
   <meta property="og:image" content="https://lp.kjeldgaards.com/genvind-din-gloed/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Fonts: Newsreader (display) · Atkinson Hyperlegible (body) · IBM Plex Mono (data) -->
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Genvind din glød på 60 dage — kun for 100 danske kvinder" />
+  <meta name="twitter:description" content="To flasker Barrier Defense i 60 dage, 749 kr. Er du tilfreds, får du to serummer gratis. Er du ikke, får du alle dine penge tilbage." />
+  <meta name="twitter:image" content="https://lp.kjeldgaards.com/genvind-din-gloed/assets/og-image.jpg" />
+
+  <!-- Schema.org Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Kjeldgaards Barrier Defense Serum — 60-dages kur (2 flasker)",
+    "image": "https://lp.kjeldgaards.com/genvind-din-gloed/assets/bottle-hero.jpg",
+    "description": "To flasker Barrier Defense Serum til en 60-dages kur. Indkapslet retinol, peptider og bakuchiol. Til moden, tør og sensitiv hud i og efter overgangsalderen.",
+    "brand": { "@type": "Brand", "name": "Kjeldgaards" },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://lp.kjeldgaards.com/genvind-din-gloed",
+      "priceCurrency": "DKK",
+      "price": "749.00",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "170"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" />
 
-  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=1" />
+  <!-- Tailwind via CDN (LOCKED per brief) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Custom CSS (versioned to bust the 1yr cache on deploy) -->
+  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=2" />
+
+  <!-- Critical guard: lives in the always-fresh HTML so a stale/cached
+       stylesheet can never blow up inline SVGs or the rotator again. -->
+  <style>
+    .derm-line svg,.about-strip svg{width:18px;height:18px;flex:0 0 auto}
+    .qualifier svg{width:15px;height:15px;flex:0 0 auto}
+    .option-guarantee svg{width:14px;height:14px;flex:0 0 auto}
+    .concern .tick svg{width:14px;height:14px}
+    .yes svg,.no svg{width:18px;height:18px}
+    .ingredient .ing-visual svg{width:56%;height:56%}
+    .howto-step .step-visual svg{width:48%;height:48%}
+    .carousel-btn svg{width:20px;height:20px}
+    .gallery-nav svg{width:22px;height:22px}
+    .zoom-hint svg{width:18px;height:18px}
+    .lb-btn svg{width:22px;height:22px}
+    .pay-logo{height:30px;width:auto}
+    .float-pill .seal-mini{width:18px;height:18px}
+    .usp-rotator{position:relative;overflow:hidden}
+    .usp{position:absolute;left:0;top:0;opacity:0}
+    .usp.is-active{opacity:1}
+    .mini-faq-a{max-height:0;overflow:hidden}
+    .mini-faq-item.is-open .mini-faq-a{max-height:400px}
+    .info .tooltip{position:absolute;opacity:0;visibility:hidden}
+    .info:hover .tooltip,.info:focus-within .tooltip{opacity:1;visibility:visible}
+  </style>
+
+  <!-- ============================================================
+       META PIXEL — Replace `META_PIXEL_ID` (3 places) to activate.
+       ============================================================ -->
   <!--
-    Tracking (§9): GA4 / GTM dataLayer. Add your GTM container or gtag snippet
-    here to activate. Events pushed by script.js: view_content, photo_guide_view,
-    add_to_cart, begin_checkout. ID placeholder: GA4_ID.
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'META_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" alt=""
+         src="https://www.facebook.com/tr?id=META_PIXEL_ID&ev=PageView&noscript=1" />
+  </noscript>
   -->
-  <script>window.dataLayer = window.dataLayer || [];</script>
+
+  <!-- ============================================================
+       GA4 — Replace `GA4_ID` with the actual measurement ID.
+       ============================================================ -->
+  <script>
+    /* (async function () {
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=GA4_ID';
+      document.head.appendChild(s);
+    })();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'GA4_ID'); */
+  </script>
 </head>
 <body>
 
   <!-- ============================================================
-       0 · Topbjælke (sticky)
+       0 · Trust bar
        ============================================================ -->
-  <div class="topbar" role="note">
-    <div class="topbar-inner">
-      <span class="topbar-item">100 pladser</span>
-      <span class="topbar-sep" aria-hidden="true"></span>
-      <span class="topbar-item">8 uger</span>
-      <span class="topbar-sep" aria-hidden="true"></span>
-      <span class="topbar-item">
-        <svg class="flag" viewBox="0 0 20 15" aria-hidden="true" focusable="false">
-          <rect width="20" height="15" fill="#C8102E"/>
-          <rect x="6" width="2.6" height="15" fill="#fff"/>
-          <rect y="6.2" width="20" height="2.6" fill="#fff"/>
-        </svg>
-        Dansk firma
-      </span>
-      <span class="topbar-sep" aria-hidden="true"></span>
-      <span class="topbar-item">1-2 dages levering</span>
-    </div>
+  <div class="trust-bar" role="region" aria-label="Trygheder">
+    Dermatologisk testet
+    <span class="sep">·</span>
+    60 dages garanti
+    <span class="sep">·</span>
+    4,7 på Trustpilot
+    <span class="sep">·</span>
+    Dansk firma
   </div>
+
+  <!-- ============================================================
+       Header (sticky, reveals CTA on scroll)
+       ============================================================ -->
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/genvind-din-gloed" class="brand-mark" aria-label="Kjeldgaards forside">Kjeldgaards</a>
+      <nav class="site-nav" aria-label="Hovedmenu">
+        <a href="/genvind-din-gloed">Forside</a>
+        <a href="/om-os">Om os</a>
+        <a href="/guides">Guides</a>
+        <a href="/kontakt">Kontakt</a>
+      </nav>
+      <a href="#deltag" class="header-cta" data-cta data-btn="masthead">Deltag nu</a>
+    </div>
+  </header>
 
   <main>
 
     <!-- ============================================================
-         1 · Hero
+         1 · Hero / buy section
          ============================================================ -->
     <section class="hero">
-      <div class="wrap hero-inner">
-        <p class="badge">KUN FOR 100 DANSKE KVINDER</p>
-        <h1 class="hero-h1">Genvind din glød på 60 dage og få to gratis serummer</h1>
-        <p class="hero-sub">Eller alle dine penge tilbage, hvis du ikke ser resultater</p>
-        <a class="btn btn-primary" href="#tilmelding" data-cta>Deltag nu</a>
-        <p class="hero-spec">749 kr · 2 flasker · 100 pladser · Gratis levering</p>
-        <p class="hero-trust">4,7 på Trustpilot · Over 18.000 tilfredse kvinder · Dermatologisk testet</p>
-        <figure class="hero-figure">
-          <picture>
-            <source srcset="/genvind-din-gloed/assets/bottle.webp" type="image/webp" />
-            <img src="/genvind-din-gloed/assets/bottle.jpg" alt="Kjeldgaards Barrier Defense Serum, 30 ml, i blå flaske" width="1000" height="1334" fetchpriority="high" />
-          </picture>
-        </figure>
-      </div>
-    </section>
+      <div class="wrap">
+        <div class="hero-grid">
 
-    <!-- ============================================================
-         1b · Sådan deltager du
-         ============================================================ -->
-    <section class="section">
-      <div class="wrap narrow reveal">
-        <h2>Sådan deltager du</h2>
-        <ol class="steps">
-          <li><span class="step-n">1</span><p>Vælg to Barrier Defense Serum i kurven.</p></li>
-          <li><span class="step-n">2</span><p>Du sender et "før"-billede. Vi sender dig et link og en vejledning, og det er dét, der sætter dine 60 dage i gang.</p></li>
-          <li><span class="step-n">3</span><p>Du bruger serummet hver aften.</p></li>
-          <li><span class="step-n">4</span><p>Efter 60 dage sender du et "efter"-billede. Er du tilfreds, sender vi dig to serummer gratis. Er du ikke, får du dine penge tilbage.</p></li>
-        </ol>
-        <a class="btn btn-primary" href="#tilmelding" data-cta>Deltag nu</a>
-      </div>
-    </section>
+          <!-- Gallery -->
+          <div class="gallery" data-gallery>
+            <div class="main-img show-pills" data-gmain>
+              <span class="float-pill float-pill--tl" data-bottle-pill>
+                <span class="pill-stars" aria-hidden="true">★</span>
+                4,7 · Trustpilot
+              </span>
+              <span class="float-pill float-pill--br" data-bottle-pill>
+                <span class="seal-mini" aria-hidden="true">60</span>
+                60 dages garanti
+              </span>
+              <button class="gallery-nav prev" type="button" data-gprev aria-label="Forrige billede">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="gallery-nav next" type="button" data-gnext aria-label="Næste billede">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+              <span class="zoom-hint" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </span>
+              <img class="gmain-img" data-gmainimg
+                   src="/genvind-din-gloed/assets/bottle-hero.webp"
+                   alt="Kjeldgaards Barrier Defense Serum — frosted blå glasflaske med guld-pipette, holdt i hånden udendørs."
+                   width="1000" height="1333" loading="eager" fetchpriority="high" decoding="async" draggable="false" />
+            </div>
+            <div class="thumb-row" data-gthumbs>
+              <button class="thumb is-active" type="button" data-full="/genvind-din-gloed/assets/bottle-hero.webp" data-bottle="1" data-alt="Kjeldgaards Barrier Defense Serum — frosted blå glasflaske med guld-pipette, holdt i hånden udendørs." aria-label="Produktbillede">
+                <img src="/genvind-din-gloed/assets/thumbs/bottle.webp" alt="" width="220" height="220" loading="lazy" draggable="false" />
+              </button>
+              <button class="thumb" type="button" data-full="/genvind-din-gloed/assets/reviews.webp" data-alt="Rigtige anmeldelser: Barrier Defense skaber reelle forandringer — udpluk af femstjernede Trustpilot-anmeldelser." aria-label="Anmeldelser">
+                <img src="/genvind-din-gloed/assets/thumbs/reviews.webp" alt="" width="220" height="220" loading="lazy" draggable="false" />
+              </button>
+              <button class="thumb" type="button" data-full="/genvind-din-gloed/assets/klinisk-studie.webp" data-alt="Klinisk studie: 100% oplevede forbedring, 95% mere fugtet hud, 90% blødere hud efter 28 dage." aria-label="Klinisk studie">
+                <img src="/genvind-din-gloed/assets/thumbs/klinisk.webp" alt="" width="220" height="220" loading="lazy" draggable="false" />
+              </button>
+              <button class="thumb" type="button" data-full="/genvind-din-gloed/assets/before-after-1.webp" data-alt="Før og efter — synligt glattere omkring mund og kæbe." aria-label="Før og efter 1">
+                <img src="/genvind-din-gloed/assets/thumbs/ba1.webp" alt="" width="220" height="220" loading="lazy" draggable="false" />
+              </button>
+              <button class="thumb" type="button" data-full="/genvind-din-gloed/assets/before-after-2.webp" data-alt="Før og efter — mere ensartet hudtone og roligere tekstur over tid." aria-label="Før og efter 2">
+                <img src="/genvind-din-gloed/assets/thumbs/ba2.webp" alt="" width="220" height="220" loading="lazy" draggable="false" />
+              </button>
+              <button class="thumb" type="button" data-full="/genvind-din-gloed/assets/before-after-3.webp" data-alt="Før og efter — mere fasthed hos den samme kvinde over tid." aria-label="Før og efter 3">
+                <img src="/genvind-din-gloed/assets/thumbs/ba3.webp" alt="" width="220" height="220" loading="lazy" draggable="false" />
+              </button>
+            </div>
+          </div>
 
-    <!-- ============================================================
-         2 · Ikon-række
-         ============================================================ -->
-    <section class="section section--paper">
-      <div class="wrap reveal">
-        <ul class="facts">
-          <li>
-            <span class="fact-key">100 pladser</span>
-            <span class="fact-note">vi kan kun gennemgå 100 billedsæt ordentligt</span>
-          </li>
-          <li>
-            <span class="fact-key">8 uger</span>
-            <span class="fact-note">to flasker, to billeder</span>
-          </li>
-          <li>
-            <span class="fact-key">Dansk firma</span>
-            <span class="fact-note">grundlagt af Morten Kjeldgaard</span>
-          </li>
-          <li>
-            <span class="fact-key">4,7 på Trustpilot</span>
-            <span class="fact-note">over 18.000 tilfredse kvinder</span>
-          </li>
-        </ul>
-      </div>
-    </section>
+          <!-- Buy column -->
+          <div class="buy-col">
+            <p class="derm-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10v-5l7-3Z"/><path d="M9.2 11.8l2 2 3.6-3.8"/></svg>
+              Udviklet i samarbejde med dermatologer
+            </p>
+            <p class="hero-badge">Kun for 100 danske kvinder</p>
+            <h1>Genvind din glød på 60 dage og få to gratis serummer</h1>
+            <p class="hero-sub">Eller <em>alle dine penge tilbage</em>, hvis du ikke ser resultater</p>
 
-    <!-- ============================================================
-         3 · Hvad du får ud af det
-         ============================================================ -->
-    <section class="section">
-      <div class="wrap narrow reveal">
-        <h2>Hvad du får ud af det</h2>
-        <p>Du har prøvet flere cremer og aldrig vidst, om nogen af dem virkede. Man ser sit eget ansigt hver dag, og en forandring er svær at få øje på for den, der kigger. Med et billede før og et billede efter kan du se den. Du får dit eget sammenligningsbillede tilbage som en fil, du ejer.</p>
-      </div>
-    </section>
+            <p class="qualifier">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+              Til moden, tør og sensitiv hud — i og efter overgangsalderen
+            </p>
 
-    <!-- ============================================================
-         4 · Hvorfor kun 100
-         ============================================================ -->
-    <section class="section section--paper">
-      <div class="wrap reveal founder">
-        <figure class="founder-photo">
-          <picture>
-            <source srcset="/genvind-din-gloed/assets/morten.webp" type="image/webp" />
-            <img src="/genvind-din-gloed/assets/morten.jpg" alt="Morten Kjeldgaard, grundlægger af Kjeldgaards" width="900" height="1100" loading="lazy" />
-          </picture>
-        </figure>
-        <div class="founder-text">
-          <h2>Hvorfor kun 100</h2>
-          <p>Vi vil gerne vide, hvad serummet gør ved dansk hud over otte uger. Det kan vi kun finde ud af ved at se de samme kvinder før og efter. Vi kan gennemgå og sammenligne 100 billedsæt ordentligt og lægge dem side om side. Flere kan vi ikke nå at gøre grundigt. Derfor er der 100 pladser.</p>
-          <p class="signature">Morten Kjeldgaard, grundlægger</p>
+            <div class="trust-row">
+              <span class="stars" aria-hidden="true">★★★★★</span>
+              <span class="trust-stat">Over 18.000 tilfredse kvinder · 4,7 på Trustpilot</span>
+              <span class="info" tabindex="0" role="button" aria-label="Mere om tallene">
+                <span class="info-dot" aria-hidden="true">i</span>
+                <span class="tooltip" role="tooltip">Over 18.000 danske kvinder har valgt Barrier Defense, og den har 4,7 på Trustpilot.</span>
+              </span>
+            </div>
+
+            <ul class="benefits benefits--check">
+              <li><strong>2 flasker</strong> — nok til alle 60 dage</li>
+              <li><strong>Indkapslet retinol</strong> — effekt uden brændingen</li>
+              <li><strong>27% færre fine linjer</strong> — klinisk dokumenteret på 28 dage</li>
+              <li><strong>Dermatologisk testet</strong> — efter EU-standard</li>
+              <li><strong>100 pladser</strong> — kun for deltagere</li>
+            </ul>
+
+            <div class="tp-widget" aria-label="Trustpilot-vurdering">
+              <span class="tp-stars" aria-hidden="true">★★★★★</span>
+              <span><strong>Fremragende</strong> · 4,7 på Trustpilot</span>
+            </div>
+
+            <div class="buy-box" role="region" aria-label="Tilbud">
+              <div class="option is-selected is-single">
+                <div class="option-row">
+                  <span class="option-label">2 flasker — 60-dages kur</span>
+                  <span class="option-price">749 kr <span class="option-was">940 kr</span></span>
+                </div>
+                <div class="option-sub">374,50 kr pr. flaske · 12,48 kr pr. dag</div>
+                <div class="option-meta-row">
+                  <span class="option-save">Spar 191 kr</span>
+                  <span class="option-guarantee">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    60 dages pengene-tilbage-garanti inkluderet
+                  </span>
+                </div>
+              </div>
+
+              <a href="https://kjeldgaards.com/checkout/genvind-din-gloed" class="cta" data-cta data-btn="hero">Deltag nu</a>
+
+              <div class="pay-row" aria-label="Betalingsmuligheder">
+                <img class="pay-logo" src="/genvind-din-gloed/assets/pay/mobilepay.png" alt="MobilePay" width="62" height="44" loading="lazy" decoding="async" />
+                <img class="pay-logo" src="/genvind-din-gloed/assets/pay/visa.png" alt="Visa" width="70" height="44" loading="lazy" decoding="async" />
+                <img class="pay-logo" src="/genvind-din-gloed/assets/pay/mastercard.svg" alt="Mastercard" width="55" height="44" loading="lazy" decoding="async" />
+                <img class="pay-logo" src="/genvind-din-gloed/assets/pay/apple-pay.png" alt="Apple Pay" width="68" height="44" loading="lazy" decoding="async" />
+              </div>
+              <p class="delivery-line"><span class="live-dot" aria-hidden="true"></span> Stor efterspørgsel · 1-2 dages levering</p>
+            </div>
+
+            <div class="about-strip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="7.8" r="0.6" fill="currentColor"/></svg>
+              <span>Indkapslet retinol frigives langsomt over cirka otte timer, mens du sover. Peptider og bakuchiol i samme formel. Dermatologisk testet efter EU-standard.</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         4b · Prisen
+         2 · Sådan deltager du
          ============================================================ -->
-    <section class="section">
-      <div class="wrap narrow reveal center">
-        <h2>Prisen</h2>
-        <p>749 kr for to flasker. Normalprisen er 940 kr, og den pris findes kun her, fordi vi får billederne.</p>
-        <a class="btn btn-primary" href="#tilmelding" data-cta>Deltag nu</a>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         5 · Sådan tager du de to billeder  (sidens grundigste sektion)
-         ============================================================ -->
-    <section class="section section--paper" id="fotovejledning" data-photo-guide>
+    <section class="section section--paper">
       <div class="wrap reveal">
-        <h2>Sådan tager du de to billeder</h2>
-        <p class="section-sub">Det tager to minutter. Det eneste, der betyder noget, er at billede nummer to bliver taget præcis som billede nummer et. Ellers kan vi ikke sammenligne dem.</p>
-
-        <ol class="photo-steps">
-          <li>
-            <div class="photo-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="28" height="32" rx="1.5"/><line x1="24" y1="8" x2="24" y2="40"/><line x1="10" y1="24" x2="38" y2="24"/></svg>
-            </div>
-            <div class="photo-body">
-              <p class="photo-h">Samme sted</p>
-              <p>Find et vindue med dagslys, og stil dig med ansigtet mod vinduet. Læg mærke til, hvor du står. Du skal stå samme sted om 60 dage.</p>
-            </div>
-          </li>
-          <li>
-            <div class="photo-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="8"/><line x1="24" y1="6" x2="24" y2="12"/><line x1="24" y1="36" x2="24" y2="42"/><line x1="6" y1="24" x2="12" y2="24"/><line x1="36" y1="24" x2="42" y2="24"/><line x1="12" y1="12" x2="16" y2="16"/><line x1="32" y1="32" x2="36" y2="36"/></svg>
-            </div>
-            <div class="photo-body">
-              <p class="photo-h">Samme lys</p>
-              <p>Dagslys fra vinduet, ikke direkte sol, og tænd ikke loftslampen. Er det gråvejr den ene dag og sol den anden, ser huden forskellig ud, selvom den ikke er det.</p>
-            </div>
-          </li>
-          <li>
-            <div class="photo-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="16"/><line x1="24" y1="24" x2="24" y2="15"/><line x1="24" y1="24" x2="31" y2="27"/></svg>
-            </div>
-            <div class="photo-body">
-              <p class="photo-h">Samme tidspunkt</p>
-              <p>Om morgenen, før du gør noget ved ansigtet. Ren hud, ingen makeup, håret væk fra ansigtet.</p>
-            </div>
-          </li>
-          <li>
-            <div class="photo-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="6" width="16" height="30" rx="2.5"/><line x1="16" y1="30" x2="32" y2="30"/><line x1="22" y1="40" x2="26" y2="40"/><line x1="24" y1="36" x2="24" y2="44"/></svg>
-            </div>
-            <div class="photo-body">
-              <p class="photo-h">Samme position</p>
-              <p>Telefonen i øjenhøjde, en armslængde væk. Lige forfra, og hold ansigtet neutralt. Et smil ændrer hver eneste linje i ansigtet.</p>
-            </div>
-          </li>
-          <li>
-            <div class="photo-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="15"/><line x1="24" y1="18" x2="24" y2="26"/><circle cx="24" cy="31" r="0.6" fill="currentColor"/><line x1="12" y1="12" x2="36" y2="36"/></svg>
-            </div>
-            <div class="photo-body">
-              <p class="photo-h">Slå skønhedsfilteret fra</p>
-              <p>De fleste telefoner glatter huden ud af sig selv. På iPhone hedder det Fotografisk stil, på Samsung hedder det ansigtsretouchering. Sluk det, og brug ikke portrættilstand.</p>
-            </div>
-          </li>
+        <div class="section-head">
+          <hr class="gold-rule gold-rule--center" />
+          <h2>Sådan deltager du</h2>
+        </div>
+        <ol class="deltag-steps">
+          <li><span class="dnum" aria-hidden="true">1</span><p>Vælg to Barrier Defense Serum i kurven.</p></li>
+          <li><span class="dnum" aria-hidden="true">2</span><p>Du sender et "før"-billede. Vi sender dig et link og en vejledning, og det er dét, der sætter dine 60 dage i gang.</p></li>
+          <li><span class="dnum" aria-hidden="true">3</span><p>Du bruger serummet hver aften.</p></li>
+          <li><span class="dnum" aria-hidden="true">4</span><p>Efter 60 dage sender du et "efter"-billede. Er du tilfreds, sender vi dig to serummer gratis. Er du ikke, får du dine penge tilbage.</p></li>
         </ol>
-
-        <p class="calm-box">Den samme vejledning ligger i pakken på et kort, og vi sender dig et link, både når du skal tage det første billede og det sidste. Du skal ikke oprette noget.</p>
+        <div class="section-cta"><a href="#deltag" class="cta cta--inline" data-cta data-btn="steps">Deltag nu</a></div>
       </div>
     </section>
 
     <!-- ============================================================
-         6 · Anmeldelser
+         3 · Anmeldelser — sidens største sektion
          ============================================================ -->
-    <section class="section">
+    <section class="section section--mist">
       <div class="wrap reveal">
-        <div class="center reviews-head">
+        <div class="section-head">
+          <hr class="gold-rule gold-rule--center" />
           <h2>Over 18.000 danske kvinder er allerede glade for Barrier Defense</h2>
           <p class="reviews-sub"><span class="tp-stars" aria-hidden="true">★★★★★</span> 4,7 på Trustpilot</p>
         </div>
-
-        <!-- Masonry built from assets/reviews/manifest.js — count read from the
-             folder, never hardcoded. Click a screenshot to zoom. -->
+        <!-- Masonry bygget fra assets/reviews/manifest.js — antal læses fra mappen, aldrig hardcodet. Klik zoomer et billede op. -->
         <div class="fb-reviews" data-fb-reviews></div>
-
         <a class="tp-link" href="https://dk.trustpilot.com/review/kjeldgaards.com" rel="noopener" target="_blank">Se profilen på Trustpilot</a>
-        <div class="center">
-          <a class="btn btn-primary" href="#tilmelding" data-cta>Deltag nu</a>
-        </div>
+        <div class="section-cta"><a href="#deltag" class="cta cta--inline" data-cta data-btn="reviews">Deltag nu</a></div>
       </div>
     </section>
 
     <!-- ============================================================
-         7 · Serummet
+         4 · Spørgsmål og svar
          ============================================================ -->
     <section class="section section--paper">
-      <div class="wrap reveal serum">
-        <div class="serum-col">
-          <h2>Sådan bruger du det</h2>
-          <ul class="plain-list">
-            <li>Rens ansigtet, som du plejer.</li>
-            <li>Tre til fire dråber, dup det ind, om aftenen.</li>
-            <li>Der skal ikke noget ovenpå.</li>
-          </ul>
-          <p>Cirka 30 sekunder, én gang om dagen. Forestil dig, at hele din hudpleje bestod af ét produkt.</p>
+      <div class="wrap reveal">
+        <div class="section-head">
+          <hr class="gold-rule gold-rule--center" />
+          <h2>Spørgsmål og svar</h2>
         </div>
-
-        <div class="serum-col">
-          <h2>Hvorfor det ikke brænder</h2>
-          <div class="compare" aria-hidden="true">
-            <div class="compare-cell">
-              <p class="compare-label">Almindelig retinol</p>
-              <svg viewBox="0 0 120 70" class="curve"><polyline points="6,64 20,10 30,26 45,50 70,60 114,62" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <p class="compare-note">Hele mængden i den første time</p>
-            </div>
-            <div class="compare-cell">
-              <p class="compare-label">Indkapslet retinol</p>
-              <svg viewBox="0 0 120 70" class="curve"><polyline points="6,58 30,50 55,42 80,36 114,30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <p class="compare-note">Frigives over cirka otte timer</p>
-            </div>
-          </div>
-          <p>Almindelig retinol frigiver hele mængden i den første time, og det er den spids, der giver rødmen. Indkapslet retinol ligger i en membran, der åbner sig over cirka otte timer, mens du sover.</p>
-          <p class="calm-box">Har du meget sensitiv hud, kan du bruge det hver anden aften den første uge. Vi anbefaler altid en patch-test bag øret først.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         8 · Hvad du siger ja til
-         ============================================================ -->
-    <section class="section">
-      <div class="wrap narrow reveal">
-        <h2>Hvad du siger ja til</h2>
-        <ul class="terms-list">
-          <li>Du sender et billede, kort efter du har fået pakken, og et billede efter 60 dage.</li>
-          <li>Er du tilfreds, sender vi dig to serummer gratis med fri fragt. Det gør vi for billederne, uanset hvad du skriver eller ikke skriver om os.</li>
-          <li>Er du ikke tilfreds, får du dine penge tilbage uden omkostninger. Ingen spørgsmål.</li>
-          <li>Vi bruger kun dine billeder offentligt, hvis du sætter flueben. Du kan sige nej og stadig deltage. Du kan trække et ja tilbage bagefter, og så tager vi dem ned.</li>
-          <li>Vi viser aldrig et efternavn. Fornavn og alder, hvis du siger ja til det.</li>
-          <li>Billederne deles ikke med andre virksomheder.</li>
-          <li>Læs <a href="https://kjeldgaards.com/privatlivspolitik" rel="noopener" target="_blank">persondatapolitikken</a> og <a href="https://kjeldgaards.com/betingelser-deltagelse" rel="noopener" target="_blank">betingelserne for deltagelse</a>.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         9 · Spørgsmål og svar
-         ============================================================ -->
-    <section class="section section--paper">
-      <div class="wrap narrow reveal">
-        <h2>Spørgsmål og svar</h2>
-        <div class="faq">
+        <div class="faq-list">
           <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">Skal jeg virkelig fotografere mit ansigt uden makeup?<span class="faq-ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Ja. Uden billederne er der ikke noget forløb, og det er billederne, hele forsøget bygger på. Du tager dem selv derhjemme, og du bestemmer bagefter, om vi må vise dem. Vi viser aldrig et efternavn.</p></div>
+            <button class="faq-q" aria-expanded="false">Hvad hvis jeg ikke ser nogen forskel?<span class="icon" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">Så sender du dit efter-billede og skriver til os, og du får alle dine penge tilbage. Flaskerne skal du ikke sende retur.</div></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">Hvad hvis jeg glemmer at tage billedet dag 60?<span class="faq-ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Vi skriver til dig dag 45 og igen dag 60, så du har det i god tid. Og du har en uge bagefter, hvis dagen ikke lige passer.</p></div>
+            <button class="faq-q" aria-expanded="false">Brænder det? Jeg afskallede sidst, jeg prøvede retinol.<span class="icon" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">Retinolen ligger i en membran, der åbner sig langsomt over cirka otte timer, mens du sover, i stedet for at frigive alt på én gang. Det er den spids, der giver afskalningen. Har du meget sensitiv hud, så brug det hver anden aften den første uge og lav en patch-test bag øret først.</div></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">Hvad nu hvis det ikke virker på min hud?<span class="faq-ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Så sender du billederne ind og skriver til os, og du får pengene tilbage uden omkostninger. Flaskerne skal du ikke sende retur.</p></div>
+            <button class="faq-q" aria-expanded="false">Hvor lang tid går der, før jeg kan se noget?<span class="icon" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">De fleste ser noget efter to til fire uger. Nogle gør ikke. Det er derfor, du har 60 dage, og det er derfor du kan få pengene tilbage.</div></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">Brænder det? Jeg afskallede sidst, jeg prøvede retinol.<span class="faq-ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Den indkapslede retinol frigives langsomt over cirka otte timer, mens du sover, i stedet for på én gang. Det er spidsen på én gang, der giver rødmen ved almindelig retinol. Har du meget sensitiv hud, kan du starte med hver anden aften den første uge.</p></div>
+            <button class="faq-q" aria-expanded="false">Hvad skal jeg med de to billeder?<span class="icon" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">Vi vil gerne kunne dokumentere, hvad serummet gør på dansk hud, og det kan vi kun ved at se de samme kvinder før og efter. Du bestemmer selv, om vi må vise dine. Du får dine to gratis serummer, uanset hvad du svarer til det.</div></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">Hvor lang tid går der, før jeg kan se noget?<span class="faq-ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>De fleste ser noget efter to til fire uger. Nogle gør ikke. Det er derfor, forsøget varer otte uger.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">Er det for sent at starte, når jeg er over 60?<span class="faq-ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Nej. Barrieren kan genopbygges hele livet. Vi vil gerne have flere over 60 med, fordi det er den aldersgruppe, der findes færrest billeder af.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">Bliver mine billeder lagt på nettet?<span class="faq-ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Kun hvis du sætter flueben. Du kan deltage og sige nej, og du kan trække et ja tilbage bagefter, så tager vi billederne ned. Vi viser aldrig et efternavn.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">Hvorfor kan jeg ikke bare købe én flaske?<span class="faq-ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Forandringen på fasthed og fine linjer ligger i uge fem til otte, så to flasker svarer til forsøgets længde. Vil du bare prøve én, kan du købe den i den almindelige shop.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">Kan jeg deltage, hvis jeg har rosacea eller meget sensitiv hud?<span class="faq-ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Ja. Start med hver anden aften den første uge, og lav en patch-test bag øret først. Frigivelsen over cirka otte timer gør den mildere end almindelig retinol.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false">Hvornår får jeg pakken?<span class="faq-ic" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Pakken er hos dig om 1-2 dage. Kort efter sender du dit før-billede, og så begynder dine 60 dage.</p></div>
+            <button class="faq-q" aria-expanded="false">Hvornår får jeg pakken?<span class="icon" aria-hidden="true"></span></button>
+            <div class="faq-a"><div class="faq-a-inner">1-2 hverdage med GLS.</div></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         10 · Tilmeldingen
+         5 · De to udfald + sidste knap
          ============================================================ -->
-    <section class="section" id="tilmelding">
-      <div class="wrap narrow reveal">
-        <h2>Deltag i de otte uger</h2>
-        <p class="section-sub">Vi stiller tre spørgsmål, før du kommer til betaling. Der er kun 100 pladser, og otte uger, hvor alle sender billedet ind, er mere værd end otte uger, hvor halvdelen lader være.</p>
-
-        <form class="signup" data-signup novalidate>
-          <fieldset class="q">
-            <legend>Hvor gammel er du?</legend>
-            <div class="opts">
-              <label><input type="radio" name="alder" value="under-40" /> <span>Under 40</span></label>
-              <label><input type="radio" name="alder" value="40-49" /> <span>40-49</span></label>
-              <label><input type="radio" name="alder" value="50-59" /> <span>50-59</span></label>
-              <label><input type="radio" name="alder" value="60plus" /> <span>60+</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="q">
-            <legend>Har du et vindue med dagslys, du kan tage billedet ved?</legend>
-            <div class="opts">
-              <label><input type="radio" name="vindue" value="ja" /> <span>Ja</span></label>
-              <label><input type="radio" name="vindue" value="ved-ikke" /> <span>Det ved jeg ikke</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="q">
-            <legend>Vil du tage et billede, når du starter, og et efter 60 dage?</legend>
-            <div class="opts">
-              <label><input type="radio" name="billede" value="ja" data-billede-ja /> <span>Ja</span></label>
-              <label><input type="radio" name="billede" value="nej" data-billede-nej /> <span>Nej</span></label>
-            </div>
-          </fieldset>
-
-          <div class="checkout" data-checkout>
-            <a class="btn btn-primary btn-lg" href="https://kjeldgaards.com/checkout/genvind-din-gloed" data-checkout-btn>Deltag nu</a>
-            <p class="checkout-price">749 kr · 2 flasker · Gratis levering</p>
-            <div class="pay" aria-label="Betalingsmuligheder">
-              <img src="/genvind-din-gloed/assets/pay/mobilepay.png" alt="MobilePay" height="24" loading="lazy" />
-              <img src="/genvind-din-gloed/assets/pay/visa.png" alt="Visa" height="24" loading="lazy" />
-              <img src="/genvind-din-gloed/assets/pay/mastercard.svg" alt="Mastercard" height="24" loading="lazy" />
-              <img src="/genvind-din-gloed/assets/pay/apple-pay.png" alt="Apple Pay" height="24" loading="lazy" />
-            </div>
+    <section class="section section--mist final" id="deltag">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <hr class="gold-rule gold-rule--center" />
+          <h2>Sådan ender det</h2>
+        </div>
+        <div class="outcomes">
+          <div class="outcome outcome--yes">
+            <p class="outcome-when">Er du tilfreds</p>
+            <p class="outcome-head">To serummer gratis</p>
+            <p class="outcome-detail">Værdi 940 kr, fri fragt.</p>
+            <p class="outcome-detail">Du får dem for dine to billeder.</p>
           </div>
-
-          <div class="opt-out" data-optout hidden>
-            <p>Så er de otte uger nok ikke noget for dig. Billederne er hele grunden til, at forsøget findes. Du er velkommen til at købe serummet i den almindelige shop.</p>
-            <a class="link-arrow" href="https://kjeldgaards.com/produkter/barrier-defense-serum" rel="noopener" target="_blank">Gå til den almindelige shop</a>
+          <div class="outcome outcome--no">
+            <p class="outcome-when">Er du ikke tilfreds</p>
+            <p class="outcome-head">Alle dine penge tilbage</p>
+            <p class="outcome-detail">749 kr, ingen spørgsmål.</p>
+            <p class="outcome-detail">Flaskerne skal du ikke sende retur.</p>
           </div>
-        </form>
+        </div>
+        <div class="final-cta">
+          <a href="https://kjeldgaards.com/checkout/genvind-din-gloed" class="cta" data-cta data-btn="final">Deltag nu</a>
+          <p class="final-spec">749 kr · 2 flasker · 100 pladser · Gratis levering</p>
+          <p class="final-fine">Se de fulde <a href="https://kjeldgaards.com/betingelser-deltagelse" rel="noopener" target="_blank">betingelser for deltagelse</a> og <a href="https://kjeldgaards.com/privatlivspolitik" rel="noopener" target="_blank">persondatapolitik</a>. Vi bruger kun dine billeder offentligt, hvis du siger ja. Du kan deltage uden.</p>
+        </div>
       </div>
     </section>
-
   </main>
 
   <!-- ============================================================
-       Footer
+       14 · Footer
        ============================================================ -->
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <p class="footer-name">Kjeldgaards ApS</p>
-          <p>Nørresundby, Danmark</p>
-          <p>CVR 43509829</p>
-        </div>
-        <div>
-          <p>Telefon: <a href="tel:+4570000000">70 00 00 00</a></p>
-          <p>Man–fre 9–15</p>
-          <p>Mail: <a href="mailto:kundeservice@kjeldgaards.com">kundeservice@kjeldgaards.com</a></p>
-        </div>
-        <div>
-          <p><a href="https://kjeldgaards.com/handelsbetingelser" rel="noopener" target="_blank">Handelsbetingelser</a></p>
-          <p><a href="https://kjeldgaards.com/betingelser-deltagelse" rel="noopener" target="_blank">Betingelser for deltagelse</a></p>
-          <p><a href="https://kjeldgaards.com/fortrydelsesret" rel="noopener" target="_blank">Fortrydelsesret</a></p>
-          <p><a href="https://kjeldgaards.com/privatlivspolitik" rel="noopener" target="_blank">Persondatapolitik</a></p>
-        </div>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <a href="https://kjeldgaards.com" class="brand-mark">Kjeldgaards</a>
+        <p>Kjeldgaards ApS</p>
+        <p>Frederik Raschs Vej 2A<br>9400 Nørresundby</p>
+        <p>CVR 43509829</p>
       </div>
-      <div class="pay footer-pay" aria-label="Betalingsmuligheder">
-        <img src="/genvind-din-gloed/assets/pay/mobilepay.png" alt="MobilePay" height="22" loading="lazy" />
-        <img src="/genvind-din-gloed/assets/pay/visa.png" alt="Visa" height="22" loading="lazy" />
-        <img src="/genvind-din-gloed/assets/pay/mastercard.svg" alt="Mastercard" height="22" loading="lazy" />
-        <img src="/genvind-din-gloed/assets/pay/apple-pay.png" alt="Apple Pay" height="22" loading="lazy" />
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Telefon: <a href="tel:+4570000000">70 00 00 00</a></li>
+          <li>Man–fre 9–15</li>
+          <li>Mail: <a href="mailto:kundeservice@kjeldgaards.com">kundeservice@kjeldgaards.com</a></li>
+        </ul>
       </div>
-      <p class="footer-fine">Ud over dette har du altid 14 dages fortrydelsesret efter forbrugeraftaleloven.</p>
+      <div>
+        <h4>Vilkår</h4>
+        <ul>
+          <li><a href="https://kjeldgaards.com/handelsbetingelser">Handelsbetingelser</a></li>
+          <li><a href="https://kjeldgaards.com/betingelser-deltagelse">Betingelser for deltagelse</a></li>
+          <li><a href="https://kjeldgaards.com/fortrydelsesret">Fortrydelsesret</a></li>
+          <li><a href="https://kjeldgaards.com/privatlivspolitik">Persondatapolitik</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-pay" aria-label="Betalingsmuligheder">
+      <img class="pay-logo" src="/genvind-din-gloed/assets/pay/mobilepay.png" alt="MobilePay" width="62" height="44" loading="lazy" decoding="async" />
+      <img class="pay-logo" src="/genvind-din-gloed/assets/pay/visa.png" alt="Visa" width="70" height="44" loading="lazy" decoding="async" />
+      <img class="pay-logo" src="/genvind-din-gloed/assets/pay/mastercard.svg" alt="Mastercard" width="55" height="44" loading="lazy" decoding="async" />
+      <img class="pay-logo" src="/genvind-din-gloed/assets/pay/apple-pay.png" alt="Apple Pay" width="68" height="44" loading="lazy" decoding="async" />
+    </div>
+    <p class="footer-fine">Ud over dette har du altid 14 dages fortrydelsesret efter forbrugeraftaleloven.</p>
+    <div class="disclaimer">
+      Som med al hudpleje kan reaktioner variere. Nogle kan opleve midlertidig rødme eller irritation ved opstart. Oplever du vedvarende rødme eller tegn på allergi, så stop brugen og kontakt en sundhedsprofessionel. Lav altid en patch-test før fuld anvendelse. Må ikke bruges af gravide, sammen med andre retinoider eller på irriteret hud. Kan øge hudens følsomhed over for sol — brug SPF 30+. Produktet er et hudplejeprodukt, ikke et lægemiddel, og er ikke beregnet til at diagnosticere, behandle eller helbrede sygdom.
     </div>
   </footer>
 
-  <!-- Sticky mobil-bjælke -->
-  <div class="sticky-buy" data-sticky>
-    <span class="sticky-price">749 kr · 100 pladser</span>
-    <a class="btn btn-primary" href="#tilmelding" data-cta>Deltag nu</a>
+  <!-- Sticky mobile buy bar -->
+  <div class="sticky-buy" role="region" aria-label="Hurtigt køb">
+    <div class="price-block">
+      <span>2 flasker · 60-dages kur</span>
+      <strong>749 kr <span class="sticky-was">940 kr</span></strong>
+    </div>
+    <a href="#deltag" class="cta" data-cta data-btn="sticky">Deltag nu</a>
   </div>
 
-  <!-- Anmeldelses-lightbox -->
+  <!-- Product image lightbox -->
+  <div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label="Produktbilleder">
+    <div class="lb-backdrop" data-lbclose></div>
+    <div class="lb-stage" data-lbstage>
+      <img data-lbimg src="" alt="" draggable="false" />
+    </div>
+    <div class="lb-counter" data-lbcounter aria-hidden="true"></div>
+    <div class="lb-controls">
+      <button class="lb-btn" type="button" data-lbprev aria-label="Forrige billede">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="lb-btn" type="button" data-lbclose aria-label="Luk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+      <button class="lb-btn" type="button" data-lbnext aria-label="Næste billede">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Facebook review lightbox -->
   <div class="lightbox" data-review-lightbox hidden role="dialog" aria-modal="true" aria-label="Facebook-anmeldelser">
     <div class="lb-backdrop" data-rlbclose></div>
     <div class="lb-stage" data-rlbstage>
@@ -465,7 +477,7 @@
     </div>
   </div>
 
-  <script src="/genvind-din-gloed/assets/reviews/manifest.js?v=1" defer></script>
-  <script src="/genvind-din-gloed/script.js?v=1" defer></script>
+  <script src="/genvind-din-gloed/assets/reviews/manifest.js?v=2" defer></script>
+  <script src="/genvind-din-gloed/script.js?v=2" defer></script>
 </body>
 </html>
