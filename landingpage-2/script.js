@@ -7,13 +7,6 @@
 
   var SOURCE_TAG = 'landingpage-2';
 
-  function fireFbq() {
-    if (typeof window.fbq === 'function') {
-      try { window.fbq.apply(null, arguments); }
-      catch (e) { /* swallow */ }
-    }
-  }
-
   function fireGa() {
     if (typeof window.gtag === 'function') {
       try { window.gtag.apply(null, arguments); }
@@ -46,11 +39,6 @@
     var link = document.querySelector('[data-primary-cta]');
     if (!link) return;
     link.addEventListener('click', function () {
-      fireFbq('track', 'Lead', {
-        content_name: 'listicle_click_from_advertorial',
-        content_category: 'advertorial_cta_primary',
-        source_url: SOURCE_TAG
-      });
       fireGa('event', 'generate_lead', {
         link_type: 'listicle_click_from_advertorial',
         source: SOURCE_TAG
@@ -62,11 +50,6 @@
     var link = document.querySelector('[data-secondary-cta]');
     if (!link) return;
     link.addEventListener('click', function () {
-      fireFbq('track', 'ViewContent', {
-        content_name: 'product_click_from_advertorial',
-        content_category: 'advertorial_cta_secondary',
-        source_url: SOURCE_TAG
-      });
       fireGa('event', 'select_content', {
         content_type: 'product_click_from_advertorial',
         source: SOURCE_TAG

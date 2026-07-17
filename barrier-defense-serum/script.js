@@ -1,6 +1,6 @@
 /* Kjeldgaards Barrier Defense — pre-sell product page
  * Buy-box, FAQ accordion, video click-to-play, scroll reveal,
- * Pixel/GA4 placeholders, sticky mobile buy-bar.
+ * GA4 placeholders, sticky mobile buy-bar.
  */
 
 (function () {
@@ -68,18 +68,7 @@
       var pack = btn.getAttribute('data-current-pack') || '2-pack';
       var url = pack === '2-pack' ? CHECKOUT_URL_2PACK : CHECKOUT_URL;
 
-      // Pixel + GA4 events (no-ops if not loaded)
-      try {
-        if (window.fbq) {
-          window.fbq('track', 'InitiateCheckout', {
-            content_name: 'Barrier Defense Serum',
-            content_ids: [pack],
-            num_items: pack === '2-pack' ? 2 : 1,
-            value: pack === '2-pack' ? PRICE_2PACK : PRICE,
-            currency: 'DKK'
-          });
-        }
-      } catch (err) {}
+      // GA4 event (no-op if not loaded)
       try {
         if (typeof window.gtag === 'function') {
           window.gtag('event', 'begin_checkout', {
@@ -160,26 +149,6 @@
   } else {
     revealEls.forEach(function (el) { el.classList.add('is-in'); });
   }
-
-  /* ---------- 75% scroll → ViewContent event ---------- */
-  var firedScroll = false;
-  function checkScroll() {
-    if (firedScroll) return;
-    var doc = document.documentElement;
-    var scrolled = (window.scrollY + window.innerHeight) / doc.scrollHeight;
-    if (scrolled >= 0.75) {
-      firedScroll = true;
-      try {
-        if (window.fbq) {
-          window.fbq('track', 'ViewContent', {
-            content_name: 'barrier_defense_serum_75pct',
-            content_category: 'pre_sell'
-          });
-        }
-      } catch (err) {}
-    }
-  }
-  window.addEventListener('scroll', checkScroll, { passive: true });
 
   /* ---------- Mark body for sticky-buy padding ---------- */
   if (stickyBar) document.body.classList.add('has-sticky');
