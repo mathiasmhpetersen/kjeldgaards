@@ -1,30 +1,27 @@
 # Assets — leveret vs. mangler
 
-## Skal leveres (rigtige filer, erstat placeholderne)
+Ingen placeholders i produktion. Alt herunder er enten rigtige filer, genbrugt fra
+produktsiden, eller markeret som noget der skal leveres.
 
-| Filnavn | Hvad det skal forestille | Status nu |
+## Skal leveres / bekræftes
+
+| Fil / felt | Hvad det skal være | Status nu |
 |---|---|---|
-| `assets/morten.jpg` + `.webp` | Portræt af Morten Kjeldgaard, roligt, dagslys, neutral baggrund. Stående, ca. 900×1100. Bruges i "Hvorfor kun 100". | **Placeholder** — grafisk pladsholder, skal udskiftes |
-| `assets/bottle.jpg` + `.webp` | Barrier Defense-flasken, roligt og stort, ét billede. Gerne på neutral flade i dagslys. | Genbrugt fra produktsiden — udskift hvis der ønskes et dedikeret hero-foto |
-| `assets/og-image.jpg` | Delebillede til Facebook/Meta, 1200×630, flaske + "Genvind din glød på 8 uger". | **Placeholder** — genereret, kan forfines af designer |
+| `assets/bottle-hero.{webp,jpg}` | Flasken i en hånd, udendørs, naturligt lys, stort. | Genbrugt fra produktsiden — udskift hvis der ønskes et dedikeret foto til denne side |
+| `assets/before-after-1..3.webp` + `thumbs/` | Rigtige før/efter i hero-thumbnail-striben. | Genbrugt fra produktsiden |
+| `assets/klinisk-studie.webp`, `assets/reviews.webp` | Thumbnails i hero-striben (klinisk graf, anmeldelses-billede). | Genbrugt fra produktsiden |
+| `assets/og-image.jpg` | Delebillede 1200×630. | Genbrugt fra produktsiden — kan laves dedikeret |
+| Footer: telefon + åbningstider | `70 00 00 00`, `Man–fre 9–15` er placeholders | Bekræft rigtige tal |
+| Footer: mail | `kundeservice@kjeldgaards.com` | Bekræft |
+| Links | handelsbetingelser, betingelser for deltagelse, fortrydelsesret (persondatapolitik peger korrekt) | Bekræft URL'er |
+| Checkout-URL | Rigtig checkout for 2-flaske-tilbuddet | Placeholder i `script.js` |
 
-## Leveret / på plads
+## På plads
 
-| Filnavn | Hvad det er |
+| Fil | Hvad |
 |---|---|
-| `assets/reviews/*.webp` (48 stk.) | Facebook-anmeldelser, konverteret fra de uploadede screenshots |
+| `assets/reviews/*.webp` (48) | Facebook-anmeldelser fra de uploadede screenshots |
 | `assets/reviews/manifest.js` | Autogenereret liste — antal læses fra mappen |
-| `assets/pay/mobilepay.png` | Betalingsikon (vises først) |
-| `assets/pay/visa.png` | Betalingsikon |
-| `assets/pay/mastercard.svg` | Betalingsikon |
-| `assets/pay/apple-pay.png` | Betalingsikon |
-| `fotovejledning-kort.svg` | Trykklar A6-vejledning til kortet i pakken |
+| `assets/pay/{mobilepay.png, visa.png, mastercard.svg, apple-pay.png}` | Betalingsikoner (MobilePay først) |
 
-## Tekst-placeholdere i footeren, der skal bekræftes
-
-- Telefonnummer (`70 00 00 00`) og åbningstider (`Man–fre 9–15`)
-- Mail (`kundeservice@kjeldgaards.com`)
-- Adresse (kun "Nørresundby, Danmark" pt. — tilføj gade + postnr.)
-- Links: handelsbetingelser, betingelser for deltagelse, fortrydelsesret
-  (persondatapolitik peger korrekt på `kjeldgaards.com/privatlivspolitik`)
-- Checkout-URL for 2-flaske-tilbuddet
+Fotovejledningen ligger i mail 1 (`mails.md`), ikke på siden — som briefen kræver.

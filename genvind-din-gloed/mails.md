@@ -1,24 +1,38 @@
 # De fem mails i forløbet
 
-Ren tekst, samme tone som siden. Erstat `[LINK]`, datoer og navne før udsendelse.
-Ingen kobling mellem anmeldelsen og de to gratis serummer — hverken i ord eller placering.
+Ren tekst, samme tone som siden: flad, konkret, hele sætninger, ingen udråbstegn.
+Al den information, der bevidst er skåret fra siden, ligger her. Erstat `[LINK]`,
+datoer og `[fornavn]` før udsendelse. Anmeldelsen må aldrig kobles til de to gratis
+serummer — hverken i ord eller placering.
 
 ---
 
-## 1 · Straks efter købet — før-billedet
+## 1 · Straks efter købet — før-billedet (den vigtigste mail)
 **Emne:** Dit første billede sætter dine 60 dage i gang
 
 Hej [fornavn],
 
-Tak fordi du er med. Din pakke er hos dig om 1-2 dage.
+Tak fordi du er med. Din pakke er hos dig om 1-2 hverdage.
 
-Det, der sætter dine 60 dage i gang, er dit før-billede. Tag det ved et vindue med
-dagslys, om morgenen, på ren hud uden makeup. Der ligger et kort i pakken med hele
-vejledningen, og du kan også se den her:
+Det, der sætter dine 60 dage i gang, er dit før-billede. Tag det, inden du går i
+gang med serummet, og send det her:
 
-[LINK til før-billede og vejledning]
+[LINK til før-billede]
 
-Når vi har billedet, skriver vi til dig igen.
+Det tager to minutter. Det eneste, der betyder noget, er at billede nummer to
+bliver taget præcis som billede nummer et. Ellers kan vi ikke sammenligne dem.
+
+1. Samme sted. Find et vindue med dagslys, og stil dig med ansigtet mod vinduet.
+   Læg mærke til, hvor du står. Du skal stå samme sted om 60 dage.
+2. Samme lys. Dagslys fra vinduet, ikke direkte sol, og tænd ikke loftslampen.
+3. Samme tidspunkt. Om morgenen, før du gør noget ved ansigtet. Ren hud, ingen
+   makeup, håret væk fra ansigtet.
+4. Samme position. Telefonen i øjenhøjde, en armslængde væk. Lige forfra, neutralt
+   ansigt. Et smil ændrer hver eneste linje i ansigtet.
+5. Slå skønhedsfilteret fra. På iPhone hedder det Fotografisk stil, på Samsung
+   ansigtsretouchering. Sluk det, og brug ikke portrættilstand.
+
+Du skal ikke oprette noget. Har du et spørgsmål, kan du bare svare på denne mail.
 
 Morten og holdet hos Kjeldgaards
 
@@ -34,8 +48,7 @@ slutter den [dag 60-dato].
 
 Brug serummet hver aften på ren hud, tre til fire dråber. Der skal ikke noget ovenpå.
 
-Du hører fra os igen omkring dag 30. Skal du bruge hjælp inden da, kan du bare svare
-på denne mail.
+Du hører fra os igen omkring dag 30.
 
 Morten og holdet hos Kjeldgaards
 
@@ -46,8 +59,8 @@ Morten og holdet hos Kjeldgaards
 
 Hej [fornavn],
 
-Du er halvvejs i de otte uger. Det er nu, du skal have din anden flaske i brug, så
-du har serum hele vejen til dag 60.
+Du er halvvejs i de 60 dage. Det er nu, du skal have din anden flaske i brug, så du
+har serum hele vejen til dag 60.
 
 Der er ikke noget, du skal gøre lige nu ud over at fortsætte hver aften. Vi skriver
 til dig igen, fem dage før du skal tage det sidste billede.
@@ -64,8 +77,7 @@ Hej [fornavn],
 Om fem dage, den [dag 60-dato], skal du tage dit efter-billede.
 
 Det vigtigste er, at det bliver taget præcis som det første: samme sted ved vinduet,
-samme dagslys, samme tid på morgenen, ren hud uden makeup. Så kan vi sammenligne de
-to billeder.
+samme dagslys, samme tid på morgenen, ren hud uden makeup.
 
 Vi sender dig linket på dagen.
 
@@ -83,9 +95,9 @@ dagslys, på samme tid, på ren hud uden makeup:
 
 [LINK til efter-billede]
 
-Når du har sendt det, tager vi de to billeder og lægger dem side om side, og du får
-dit eget sammenligningsbillede tilbage. Er du tilfreds, sender vi dig to serummer
-gratis med fri fragt. Er du ikke, får du dine penge tilbage.
+Når du har sendt det, lægger vi de to billeder side om side, og du får dit eget
+sammenligningsbillede tilbage. Er du tilfreds, sender vi dig to serummer gratis med
+fri fragt. Er du ikke, får du dine penge tilbage.
 
 Morten og holdet hos Kjeldgaards
 
