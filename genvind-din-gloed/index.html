@@ -62,7 +62,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom CSS (versioned to bust the 1yr cache on deploy) -->
-  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=7" />
+  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=8" />
 
   <!-- Critical guard: lives in the always-fresh HTML so a stale/cached
        stylesheet can never blow up inline SVGs or the rotator again. -->
@@ -170,16 +170,56 @@
         <h1 class="ch-h1">Få din glød tilbage på 60 dage og få <em class="accent-italic">to gratis serummer</em> til en værdi á <em class="accent-italic">940 kr</em></h1>
         <p class="ch-sub">Eller alle dine penge tilbage, hvis du ikke ser resultater</p>
 
-        <figure class="hero-mockup">
-          <img src="/genvind-din-gloed/assets/challenge/hero-deltag.webp"
-               alt="Sådan deltager du: 1) Vælg to Barrier Defense Serum i kurven. 2) Send et før-billede — det sætter dine 60 dage i gang. 3) Brug serummet hver aften. 4) Efter 60 dage sender du et efter-billede; er du tilfreds, får du to serummer gratis, ellers pengene tilbage. Nederst syv danske kvinder, der holder Barrier Defense Serum."
-               width="1500" height="844" loading="eager" decoding="async" fetchpriority="high" draggable="false" />
-        </figure>
+        <div class="steps-card">
+          <h2 class="steps-title">Sådan deltager du</h2>
+          <ol class="steps-list">
+            <li><span class="step-num" aria-hidden="true">1</span><p>Vælg to Barrier Defense Serum i kurven</p></li>
+            <li><span class="step-num" aria-hidden="true">2</span><p>Du sender et "før"-billede. Vi sender dig et link og en vejledning, og det er det, der sætter dine 60 dage i gang.</p></li>
+            <li><span class="step-num" aria-hidden="true">3</span><p>Du bruger serummet hver aften.</p></li>
+            <li><span class="step-num" aria-hidden="true">4</span><p>Efter 60 dage sender du et "efter"-billede. Er du tilfreds, sender vi dig to serummer gratis. Er du ikke, får du dine penge tilbage.</p></li>
+          </ol>
+        </div>
 
         <div class="ch-cta">
           <a href="https://kjeldgaards.com/checkout/genvind-din-gloed" class="cta" data-cta data-btn="hero">Deltag nu</a>
         </div>
       </div>
+    </section>
+
+    <!-- ============================================================
+         1b · Trust-strip — auto-rullende kundefotos
+         ============================================================ -->
+    <section class="trust-strip" aria-label="Danske kvinder der bruger Barrier Defense">
+      <div class="wrap trust-strip-head">
+        <h2>Danske kvinder bruger <em class="accent-italic">Barrier Defense</em> hver aften</h2>
+        <p class="trust-strip-stat">Dermatologisk testet efter EU-standard</p>
+      </div>
+      <div class="marquee" data-marquee>
+        <div class="marquee-track">
+          <img src="/genvind-din-gloed/assets/challenge/trust-1.webp" alt="Dansk kvinde holder Barrier Defense Serum" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-2.webp" alt="Dansk kvinde holder Barrier Defense Serum" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-3.webp" alt="Dansk kvinde holder Barrier Defense Serum" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-4.webp" alt="Dansk kvinde holder Barrier Defense Serum" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-5.webp" alt="Dansk kvinde holder Barrier Defense Serum" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-6.webp" alt="Dansk kvinde holder Barrier Defense Serum" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-7.webp" alt="Dansk kvinde holder Barrier Defense Serum" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-8.webp" alt="Dansk kvinde holder Barrier Defense Serum" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-9.webp" alt="Dansk kvinde holder Barrier Defense Serum" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-10.webp" alt="Dansk kvinde holder Barrier Defense Serum" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <!-- duplikat til sømløs løkke (skjult for skærmlæsere) -->
+          <img src="/genvind-din-gloed/assets/challenge/trust-1.webp" alt="" aria-hidden="true" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-2.webp" alt="" aria-hidden="true" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-3.webp" alt="" aria-hidden="true" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-4.webp" alt="" aria-hidden="true" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-5.webp" alt="" aria-hidden="true" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-6.webp" alt="" aria-hidden="true" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-7.webp" alt="" aria-hidden="true" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-8.webp" alt="" aria-hidden="true" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-9.webp" alt="" aria-hidden="true" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+          <img src="/genvind-din-gloed/assets/challenge/trust-10.webp" alt="" aria-hidden="true" width="420" height="560" loading="lazy" decoding="async" draggable="false" />
+        </div>
+      </div>
+      <p class="trust-strip-foot"><span class="tp-stars" aria-hidden="true">★★★★★</span> Fremragende · 4,7 på Trustpilot</p>
     </section>
 
     <!-- ============================================================
