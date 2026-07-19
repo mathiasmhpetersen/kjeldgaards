@@ -2235,14 +2235,17 @@ body.lb-open { overflow: hidden; }
 .ch-h1 {
   font-family: var(--font-serif); font-weight: 700;
   font-size: clamp(1.9rem, 4.4vw, 3.1rem); line-height: 1.1;
-  color: var(--ink); margin: 0 auto 14px; max-width: 20ch;
+  color: var(--ink); margin: 0 auto 14px; max-width: 17ch;
+  text-wrap: balance;
 }
 .ch-h1 .accent-italic { font-style: italic; font-weight: 600; color: var(--marine); }
 .ch-sub {
   font-family: var(--font-sans);
   font-size: clamp(1.05rem, 2.1vw, 1.25rem); color: var(--ink-soft);
-  margin: 0 auto 30px; max-width: 40ch; line-height: 1.55;
+  margin: 0 auto 30px; max-width: 42ch; line-height: 1.55;
+  text-wrap: balance;
 }
+.ch-sub .nowrap { white-space: nowrap; }
 
 /* Steps card ("Sådan deltager du") — coded */
 .steps-card {
