@@ -26,12 +26,12 @@ produktsiden, eller markeret som noget der skal leveres.
 
 Fotovejledningen ligger i mail 1 (`mails.md`), ikke på siden — som briefen kræver.
 
-## Challenge-hero kundefotos (assets/challenge/)
+## Challenge-hero billede (assets/challenge/)
 
 | Fil | Hvad | Status |
 |---|---|---|
-| `assets/challenge/kunde-1.webp` … `kunde-7.webp` | 7 rigtige kunde-fotos (kvinder der holder Barrier Defense-flasken), portræt ~274×388. | **Udtrukket fra den leverede mockup** ("Tilføj en overskrift"). Lav opløsning — udskift med hi-res originaler, hvis de findes. |
+| `assets/challenge/hero-deltag.webp` | Det leverede mockup-billede: "Sådan deltager du"-kort + 7 kunde-fotos, brugt som ét hero-billede (1500×844). | Leveret af bruger. **OBS:** tekst er "brændt ind" i billedet — små trin-tekster på mobil. Overvej et mobil-optimeret (portræt) billede, eller en HTML-genopbygning til mobil, hvis læsbarhed på telefon skal op på 18px. |
 
-Det gamle to-spaltede hero (produktbillede + købsmodul) er fjernet fra siden, men
-dets assets (`bottle-hero.*`, `before-after-*`, `thumbs/`, `reviews.webp`,
-`klinisk-studie.webp`) ligger stadig i `assets/` — de bruges ikke længere.
+Det gamle to-spaltede hero (produktbillede + købsmodul) er fjernet, men dets assets
+(`bottle-hero.*`, `before-after-*`, `thumbs/`, `reviews.webp`, `klinisk-studie.webp`)
+ligger stadig i `assets/` — de bruges ikke længere.
