@@ -25,3 +25,13 @@ produktsiden, eller markeret som noget der skal leveres.
 | `assets/pay/{mobilepay.png, visa.png, mastercard.svg, apple-pay.png}` | Betalingsikoner (MobilePay først) |
 
 Fotovejledningen ligger i mail 1 (`mails.md`), ikke på siden — som briefen kræver.
+
+## Challenge-hero kundefotos (assets/challenge/)
+
+| Fil | Hvad | Status |
+|---|---|---|
+| `assets/challenge/kunde-1.webp` … `kunde-7.webp` | 7 rigtige kunde-fotos (kvinder der holder Barrier Defense-flasken), portræt ~274×388. | **Udtrukket fra den leverede mockup** ("Tilføj en overskrift"). Lav opløsning — udskift med hi-res originaler, hvis de findes. |
+
+Det gamle to-spaltede hero (produktbillede + købsmodul) er fjernet fra siden, men
+dets assets (`bottle-hero.*`, `before-after-*`, `thumbs/`, `reviews.webp`,
+`klinisk-studie.webp`) ligger stadig i `assets/` — de bruges ikke længere.
