@@ -2162,33 +2162,7 @@ body.lb-open { overflow: hidden; }
 .section-cta { text-align: center; margin-top: 34px; }
 .cta.cta--inline { display: inline-block; width: auto; min-width: 280px; }
 
-/* 2 · Sådan deltager du */
-.deltag-steps {
-  list-style: none; margin: 0 auto; padding: 0;
-  display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 1040px;
-}
-@media (min-width: 760px) { .deltag-steps { grid-template-columns: repeat(4, 1fr); gap: 20px; } }
-.deltag-steps li {
-  background: var(--paper); border: 1px solid var(--rule); border-radius: 14px;
-  padding: 26px 24px; box-shadow: 0 1px 2px rgba(16,42,67,.04), 0 10px 24px rgba(16,42,67,.05);
-  display: flex; gap: 16px; align-items: flex-start;
-}
-/* Desktop: number pinned at the top so 1–4 reads as an aligned row; the text
-   sits just below it. Cards are equal height (grid stretch). */
-@media (min-width: 760px) {
-  .deltag-steps li { flex-direction: column; gap: 16px; justify-content: flex-start; text-align: left; }
-}
-.dnum {
-  flex: 0 0 auto;
-  font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--gold);
-  width: 42px; height: 42px; border-radius: 50%;
-  background: var(--cream);
-  border: 1px solid var(--gold-soft);
-  display: flex; align-items: center; justify-content: center;
-}
-.deltag-steps p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink); }
-
-/* 3 · Anmeldelser — masonry (sidens største flade) */
+/* 2 · Anmeldelser — masonry (sidens største flade) */
 .fb-reviews { column-count: 2; column-gap: 12px; max-width: var(--maxw); margin: 0 auto; }
 @media (min-width: 640px)  { .fb-reviews { column-count: 3; column-gap: 14px; } }
 @media (min-width: 1000px) { .fb-reviews { column-count: 4; column-gap: 16px; } }
