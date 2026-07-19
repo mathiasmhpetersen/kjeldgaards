@@ -62,7 +62,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom CSS (versioned to bust the 1yr cache on deploy) -->
-  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=4" />
+  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=5" />
 
   <!-- Critical guard: lives in the always-fresh HTML so a stale/cached
        stylesheet can never blow up inline SVGs or the rotator again. -->
@@ -303,9 +303,34 @@
     </section>
 
     <!-- ============================================================
-         4 · Spørgsmål og svar
+         3 · De to udfald + sidste knap
          ============================================================ -->
-    <section class="section section--paper">
+    <section class="section section--paper final" id="deltag">
+      <div class="wrap reveal">
+        <div class="outcomes">
+          <div class="outcome outcome--yes">
+            <p class="outcome-when">Er du tilfreds</p>
+            <p class="outcome-head">To serummer gratis</p>
+            <p class="outcome-detail">Værdi 940 kr, fri fragt.</p>
+            <p class="outcome-detail">Du får dem for dine to billeder.</p>
+          </div>
+          <div class="outcome outcome--no">
+            <p class="outcome-when">Er du ikke tilfreds</p>
+            <p class="outcome-head">Alle dine penge tilbage</p>
+            <p class="outcome-detail">749 kr, ingen spørgsmål.</p>
+            <p class="outcome-detail">Flaskerne skal du ikke sende retur.</p>
+          </div>
+        </div>
+        <div class="final-cta">
+          <a href="https://kjeldgaards.com/checkout/genvind-din-gloed" class="cta" data-cta data-btn="final">Deltag nu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4 · Spørgsmål og svar (lige over footer)
+         ============================================================ -->
+    <section class="section section--mist">
       <div class="wrap reveal">
         <div class="section-head">
           <hr class="gold-rule gold-rule--center" />
@@ -332,37 +357,6 @@
             <button class="faq-q" aria-expanded="false">Hvornår får jeg pakken?<span class="icon" aria-hidden="true"></span></button>
             <div class="faq-a"><div class="faq-a-inner">1-2 hverdage med GLS.</div></div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         5 · De to udfald + sidste knap
-         ============================================================ -->
-    <section class="section section--mist final" id="deltag">
-      <div class="wrap reveal">
-        <div class="section-head">
-          <hr class="gold-rule gold-rule--center" />
-          <h2>Sådan ender det</h2>
-        </div>
-        <div class="outcomes">
-          <div class="outcome outcome--yes">
-            <p class="outcome-when">Er du tilfreds</p>
-            <p class="outcome-head">To serummer gratis</p>
-            <p class="outcome-detail">Værdi 940 kr, fri fragt.</p>
-            <p class="outcome-detail">Du får dem for dine to billeder.</p>
-          </div>
-          <div class="outcome outcome--no">
-            <p class="outcome-when">Er du ikke tilfreds</p>
-            <p class="outcome-head">Alle dine penge tilbage</p>
-            <p class="outcome-detail">749 kr, ingen spørgsmål.</p>
-            <p class="outcome-detail">Flaskerne skal du ikke sende retur.</p>
-          </div>
-        </div>
-        <div class="final-cta">
-          <a href="https://kjeldgaards.com/checkout/genvind-din-gloed" class="cta" data-cta data-btn="final">Deltag nu</a>
-          <p class="final-spec">749 kr · 2 flasker · 100 pladser · Gratis levering</p>
-          <p class="final-fine">Se de fulde <a href="https://kjeldgaards.com/betingelser-deltagelse" rel="noopener" target="_blank">betingelser for deltagelse</a> og <a href="https://kjeldgaards.com/privatlivspolitik" rel="noopener" target="_blank">persondatapolitik</a>. Vi bruger kun dine billeder offentligt, hvis du siger ja. Du kan deltage uden.</p>
         </div>
       </div>
     </section>
