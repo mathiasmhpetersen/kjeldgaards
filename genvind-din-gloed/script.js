@@ -7,7 +7,7 @@
   'use strict';
 
   /* ---------- Config ---------- */
-  var CHECKOUT_URL = 'https://kjeldgaards.com/checkout/genvind-din-gloed'; // placeholder
+  var CHECKOUT_URL = 'https://kjeldgaards.com/checkout/'; // placeholder
   var PRICE_2PACK = 749;  // 2 flasker — 60-dages kur (eneste tilbud)
   var REVIEW_BASE = '/genvind-din-gloed/assets/reviews/';
 
