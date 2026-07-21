@@ -899,6 +899,70 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   .fv-media .video-card { margin: 0; }           /* sit toward the text */
 }
 
+/* ============================================================
+   Clinical-study section — stat image (left) + write-up (right).
+   Mirrors the founder layout so the two read as a set.
+   Mobile: headline -> image -> body.  Desktop: image left, text right.
+   ============================================================ */
+.cs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "head"
+    "media"
+    "body";
+  gap: 22px 0;
+  align-items: start;
+}
+.cs-head  { grid-area: head; }
+.cs-media { grid-area: media; }
+.cs-body  { grid-area: body; }
+
+.cs-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.15; margin: 0; }
+
+/* stat image: same rounded/shadowed frame as the founder video */
+.cs-media .cs-figure {
+  margin: 0 auto; max-width: 460px;
+  border-radius: var(--radius-lg); overflow: hidden;
+  border: 1px solid var(--rule); box-shadow: var(--shadow-card);
+  background: var(--paper);
+}
+.cs-figure img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+
+.cs-body p { font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0 0 1em; }
+.cs-leadin { font-weight: 600; margin-bottom: 12px !important; }
+
+.cs-stats { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 13px; }
+.cs-stats li {
+  position: relative; padding-left: 26px;
+  font-size: 18px; line-height: 1.5; color: var(--ink);
+}
+.cs-stats li::before {
+  content: ""; position: absolute; left: 2px; top: 0.5em;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--marine);
+}
+.cs-pct { font-weight: 700; color: var(--marine-700); font-size: 1.05em; }
+
+.cs-foot { font-size: 13px; color: var(--ink-soft); margin: 0; }
+
+@media (min-width: 820px) {
+  .cs-grid {
+    grid-template-columns: 0.92fr 1.08fr;      /* image ~48% / text ~52% */
+    grid-template-rows: 1fr auto auto 1fr;     /* spacers center the text block */
+    grid-template-areas:
+      "media  ."
+      "media  head"
+      "media  body"
+      "media  .";
+    column-gap: clamp(40px, 6vw, 72px);
+    row-gap: 16px;
+  }
+  .cs-media { align-self: center; }
+  .cs-head, .cs-body { max-width: 34em; }       /* readable measure */
+  .cs-media .cs-figure { max-width: none; margin: 0; }
+}
+
 /* === Trustpilot wall === */
 .tp-head {
   display: flex;
