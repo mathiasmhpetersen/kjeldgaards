@@ -849,6 +849,54 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   letter-spacing: 0.05em;
 }
 
+/* ============================================================
+   Founder section — Morten's story (text) + founder VSL (video)
+   Mobile: headline -> video -> body.  Desktop: text left, video right.
+   ============================================================ */
+.fv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "head"
+    "media"
+    "body";
+  gap: 22px 0;
+  align-items: start;
+}
+.fv-head  { grid-area: head; }
+.fv-media { grid-area: media; }
+.fv-body  { grid-area: body; }
+
+.fv-eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+.fv-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.15; margin: 0; }
+.fv-body p { font-size: 18px; line-height: 1.6; color: var(--ink); margin: 0 0 1.05em; }
+.fv-body p:last-child { margin-bottom: 0; }
+
+/* the video: capped so it never towers over the text */
+.fv-media .video-card { max-width: 340px; margin: 0 auto; }
+
+@media (min-width: 820px) {
+  .fv-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-areas:
+      "head  media"
+      "body  media";
+    column-gap: clamp(40px, 6vw, 72px);
+    row-gap: 20px;
+  }
+  .fv-media { align-self: center; }
+  .fv-head, .fv-body { max-width: 32em; }        /* readable measure */
+  .fv-media .video-card { margin: 0; }           /* sit toward the text */
+}
+
 /* === Trustpilot wall === */
 .tp-head {
   display: flex;
