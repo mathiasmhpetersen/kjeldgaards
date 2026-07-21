@@ -16,6 +16,7 @@
   --gold:       #B0925E;   /* refined brass — stars + hairline rules */
   --gold-soft:  #E7DCC6;
   --tp-green:   #00B67A;    /* Trustpilot green — untouched */
+  --brick:      #A94A42;    /* muted brick red — "nej" crosses (AA-tuned) */
   --rule:       #E8E0D3;   /* soft warm hairline — dividers whisper */
   --accent-tint: #E7EDEF;  /* soft fill for step-number circles */
 
@@ -2306,3 +2307,58 @@ body.lb-open { overflow: hidden; }
 .ch-cta { margin-top: 6px; }
 .ch-cta .cta { display: inline-block; width: auto; min-width: 300px; margin: 0 auto; }
 @media (max-width: 480px) { .ch-cta .cta { width: 100%; min-width: 0; } }
+
+/* ============================================================
+   Comparison — Barrier Defense vs. andre serum
+   Grid + display:contents rows (ARIA roles keep it a table).
+   Middle column sits on a raised --paper panel (the "us" hero).
+   ============================================================ */
+.compare-sub { font-family: var(--font-sans); font-size: clamp(1rem, 2vw, 1.1rem); color: var(--ink-soft); margin: 12px auto 0; max-width: 46ch; line-height: 1.55; }
+
+.compare {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 118px 118px;
+  align-items: stretch;
+  max-width: 600px; margin: 30px auto 0;
+}
+.cmp-row { display: contents; }
+
+/* raised panel over the Barrier Defense column (absolute, so it doesn't
+   affect grid auto-placement — the middle+right columns are fixed-width) */
+.cmp-panel {
+  position: absolute; top: 0; bottom: 0; right: 118px; width: 118px;
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border-top: 3px solid var(--marine);
+  z-index: 0;
+}
+.cmp-cell {
+  position: relative; z-index: 1;
+  display: flex; align-items: center;
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.cmp-row--last .cmp-cell { border-bottom: 0; }
+
+.cmp-label { justify-content: flex-start; font-size: 18px; line-height: 1.4; color: var(--ink); }
+.cmp-bd, .cmp-other { justify-content: center; text-align: center; }
+
+.cmp-colhead { font-family: var(--font-sans); font-weight: 700; font-size: 15px; letter-spacing: .01em; }
+.cmp-bd.cmp-colhead { color: var(--ink); padding-top: 22px; }
+.cmp-other.cmp-colhead { color: var(--ink-soft); font-weight: 600; }
+
+.mark { font-size: 21px; line-height: 1; font-weight: 700; }
+.mark-yes { color: var(--marine); }
+.mark-no { color: var(--brick); }
+
+@media (max-width: 560px) {
+  .compare { grid-template-columns: minmax(0, 1fr) 74px 74px; max-width: 100%; }
+  .cmp-panel { right: 74px; width: 74px; }
+  .cmp-cell { padding: 16px 8px; }
+  .cmp-label { font-size: 18px; }
+  .cmp-colhead { font-size: 12.5px; line-height: 1.2; }
+  .cmp-bd.cmp-colhead { padding-top: 18px; }
+  .mark { font-size: 19px; }
+}
