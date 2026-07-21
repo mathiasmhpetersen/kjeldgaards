@@ -2316,57 +2316,60 @@ body.lb-open { overflow: hidden; }
    ============================================================ */
 .compare-sub { font-family: var(--font-sans); font-size: clamp(1rem, 2vw, 1.1rem); color: var(--ink-soft); margin: 12px auto 0; max-width: 46ch; line-height: 1.55; }
 
-/* Card table: bottle icons at top, filled green/red circle marks, zebra rows */
-.cmp {
-  max-width: 600px; margin: 34px auto 0;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+/* Designed comparison: marine header bar, product tucked above, highlighted BD column */
+.cx-wrap { position: relative; max-width: 600px; margin: 116px auto 0; }
+.cx {
+  background: var(--paper); border: 1px solid var(--rule);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
   overflow: hidden;
 }
-.cmp-heads, .cmp-r {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) 1fr 1fr;
-  align-items: center;
+.cx-bar, .cx-r {
+  display: grid; grid-template-columns: minmax(0, 1fr) 130px 130px; align-items: center;
 }
-.cmp-heads { border-bottom: 1px solid var(--rule); }
-.cmp-r:nth-child(even) { background: #F3EFE7; }   /* zebra — .cmp-heads is child 1 */
+.cx-bar { background: var(--deep); }
+.cx-c { padding: 16px 12px; text-align: center; }
+.cx-lbl { text-align: left; font-size: 18px; line-height: 1.35; color: var(--ink); }
+.cx-hbd, .cx-hother { font-family: var(--font-sans); font-weight: 700; font-size: 14px; padding-top: 18px; padding-bottom: 16px; }
+.cx-hbd { color: #fff; }
+.cx-hother { color: #A9C2D4; font-weight: 600; }
+.cx-r { border-top: 1px solid var(--rule); }
+.cx-r .cx-cbd { background: rgba(60,100,120,.05); }   /* highlighted BD column */
 
-.cmp-c { padding: 16px 14px; text-align: center; }
-.cmp-c-lbl { text-align: left; font-size: 18px; line-height: 1.35; color: var(--ink); }
-.cmp-c-head { display: flex; flex-direction: column; align-items: center; gap: 8px; padding-top: 16px; padding-bottom: 12px; }
-.cmp-bottle svg { width: 30px; height: 44px; display: block; }
-.cmp-bottle--bd { color: var(--marine); }
-.cmp-bottle--other { color: #BBB6AA; }
-.cmp-cname { font-family: var(--font-sans); font-weight: 700; font-size: 14px; color: var(--ink); }
-.cmp-c-other .cmp-cname { color: var(--ink-soft); font-weight: 600; }
-.cmp-c-mark { display: flex; align-items: center; justify-content: center; }
-
-.circ {
+.cx-badge {
   width: 26px; height: 26px; border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
   color: #fff; font-size: 14px; font-weight: 700; line-height: 1;
 }
-.circ--yes { background: var(--ok-green); }
-.circ--no { background: var(--brick); }
-.circ--yes::before { content: "✓"; }
-.circ--no::before { content: "✕"; }
+.cx-badge-yes { background: var(--ok-green); }
+.cx-badge-no { background: var(--brick); }
+.cx-badge-yes::before { content: "✓"; }
+.cx-badge-no::before { content: "✕"; }
 
-/* bottom callout */
-.cmp-note {
+/* product / bottle peeking above the bar */
+.cx-bottle { position: absolute; z-index: 3; }
+.cx-bottle-bd { right: 158px; top: -108px; width: 62px; height: auto; filter: drop-shadow(0 8px 16px rgba(16,42,67,.32)); }
+.cx-bottle-other { right: 43px; top: -64px; width: 42px; color: #B4AFA3; }
+.cx-bottle-other svg { width: 100%; height: auto; display: block; }
+
+/* callout */
+.cx-note {
   display: flex; gap: 12px; align-items: flex-start;
   max-width: 560px; margin: 20px auto 0;
   background: var(--paper); border: 1px solid var(--rule);
   border-radius: var(--radius-md); padding: 16px 18px;
 }
-.cmp-note .circ { flex: 0 0 auto; margin-top: 1px; }
-.cmp-note p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
-.cmp-note strong { color: var(--ink); font-weight: 700; }
+.cx-note .cx-badge { flex: 0 0 auto; margin-top: 1px; }
+.cx-note p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
+.cx-note strong { color: var(--ink); font-weight: 700; }
+
+/* trust strip */
+.cx-trust { text-align: center; margin: 18px auto 0; font-size: 14px; color: var(--ink-soft); max-width: 520px; }
 
 @media (max-width: 560px) {
-  .cmp-heads, .cmp-r { grid-template-columns: minmax(0, 1fr) 62px 62px; }
-  .cmp-c { padding: 14px 10px; }
-  .cmp-bottle svg { width: 26px; height: 38px; }
-  .cmp-cname { font-size: 12.5px; line-height: 1.15; }
+  .cx-wrap { margin-top: 100px; }
+  .cx-bar, .cx-r { grid-template-columns: minmax(0, 1fr) 64px 64px; }
+  .cx-c { padding: 14px 8px; }
+  .cx-hbd, .cx-hother { font-size: 12.5px; }
+  .cx-bottle-bd { right: 80px; top: -96px; width: 54px; }
+  .cx-bottle-other { right: 20px; top: -56px; width: 36px; }
 }
