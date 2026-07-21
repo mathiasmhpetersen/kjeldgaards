@@ -62,7 +62,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom CSS (versioned to bust the 1yr cache on deploy) -->
-  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=14" />
+  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=15" />
 
   <!-- Critical guard: lives in the always-fresh HTML so a stale/cached
        stylesheet can never blow up inline SVGs or the rotator again. -->
@@ -226,40 +226,48 @@
           <p class="compare-sub">Der er stor forskel på serummer til moden hud. Her er hvad du får med Barrier Defense — som de fleste andre ikke giver dig.</p>
         </div>
 
-        <div class="compare" role="table" aria-label="Barrier Defense sammenlignet med andre serum">
-          <div class="cmp-panel" aria-hidden="true"></div>
+        <div class="cmp" role="table" aria-label="Barrier Defense sammenlignet med andre serum">
+          <div class="cmp-heads" role="row">
+            <span class="cmp-c cmp-c-lbl" role="columnheader" aria-label="Egenskab"></span>
+            <span class="cmp-c cmp-c-head cmp-c-bd" role="columnheader">
+              <span class="cmp-bottle cmp-bottle--bd"><svg viewBox="0 0 44 64" fill="currentColor" aria-hidden="true"><rect x="17" y="0" width="10" height="13" rx="2.5"/><rect x="19.5" y="11" width="5" height="8"/><rect x="8" y="18" width="28" height="44" rx="8"/></svg></span>
+              <span class="cmp-cname">Barrier Defense</span>
+            </span>
+            <span class="cmp-c cmp-c-head cmp-c-other" role="columnheader">
+              <span class="cmp-bottle cmp-bottle--other"><svg viewBox="0 0 44 64" fill="currentColor" aria-hidden="true"><rect x="17" y="0" width="10" height="13" rx="2.5"/><rect x="19.5" y="11" width="5" height="8"/><rect x="8" y="18" width="28" height="44" rx="8"/></svg></span>
+              <span class="cmp-cname">Andre serum</span>
+            </span>
+          </div>
+          <div class="cmp-r" role="row">
+            <span class="cmp-c cmp-c-lbl" role="rowheader">Blid mod sart hud</span>
+            <span class="cmp-c cmp-c-mark" role="cell"><span class="circ circ--yes" role="img" aria-label="Ja"></span></span>
+            <span class="cmp-c cmp-c-mark" role="cell"><span class="circ circ--no" role="img" aria-label="Nej"></span></span>
+          </div>
+          <div class="cmp-r" role="row">
+            <span class="cmp-c cmp-c-lbl" role="rowheader">Sparer dig for en dyr rutine</span>
+            <span class="cmp-c cmp-c-mark" role="cell"><span class="circ circ--yes" role="img" aria-label="Ja"></span></span>
+            <span class="cmp-c cmp-c-mark" role="cell"><span class="circ circ--no" role="img" aria-label="Nej"></span></span>
+          </div>
+          <div class="cmp-r" role="row">
+            <span class="cmp-c cmp-c-lbl" role="rowheader">Klinisk dokumenteret effekt</span>
+            <span class="cmp-c cmp-c-mark" role="cell"><span class="circ circ--yes" role="img" aria-label="Ja"></span></span>
+            <span class="cmp-c cmp-c-mark" role="cell"><span class="circ circ--no" role="img" aria-label="Nej"></span></span>
+          </div>
+          <div class="cmp-r" role="row">
+            <span class="cmp-c cmp-c-lbl" role="rowheader">Efterlader huden blød, ikke tør</span>
+            <span class="cmp-c cmp-c-mark" role="cell"><span class="circ circ--yes" role="img" aria-label="Ja"></span></span>
+            <span class="cmp-c cmp-c-mark" role="cell"><span class="circ circ--no" role="img" aria-label="Nej"></span></span>
+          </div>
+          <div class="cmp-r" role="row">
+            <span class="cmp-c cmp-c-lbl" role="rowheader">Resultater eller penge tilbage</span>
+            <span class="cmp-c cmp-c-mark" role="cell"><span class="circ circ--yes" role="img" aria-label="Ja"></span></span>
+            <span class="cmp-c cmp-c-mark" role="cell"><span class="circ circ--no" role="img" aria-label="Nej"></span></span>
+          </div>
+        </div>
 
-          <div class="cmp-row" role="row">
-            <span class="cmp-cell cmp-label" role="columnheader" aria-label="Egenskab"></span>
-            <span class="cmp-cell cmp-bd cmp-colhead" role="columnheader">Barrier Defense</span>
-            <span class="cmp-cell cmp-other cmp-colhead" role="columnheader">Andre serum</span>
-          </div>
-
-          <div class="cmp-row" role="row">
-            <span class="cmp-cell cmp-label" role="rowheader">Blid mod sart hud</span>
-            <span class="cmp-cell cmp-bd" role="cell"><span class="mark mark-yes" role="img" aria-label="Ja">✓</span></span>
-            <span class="cmp-cell cmp-other" role="cell"><span class="mark mark-no" role="img" aria-label="Nej">✕</span></span>
-          </div>
-          <div class="cmp-row" role="row">
-            <span class="cmp-cell cmp-label" role="rowheader">Sparer dig for en dyr rutine</span>
-            <span class="cmp-cell cmp-bd" role="cell"><span class="mark mark-yes" role="img" aria-label="Ja">✓</span></span>
-            <span class="cmp-cell cmp-other" role="cell"><span class="mark mark-no" role="img" aria-label="Nej">✕</span></span>
-          </div>
-          <div class="cmp-row" role="row">
-            <span class="cmp-cell cmp-label" role="rowheader">Klinisk dokumenteret effekt</span>
-            <span class="cmp-cell cmp-bd" role="cell"><span class="mark mark-yes" role="img" aria-label="Ja">✓</span></span>
-            <span class="cmp-cell cmp-other" role="cell"><span class="mark mark-no" role="img" aria-label="Nej">✕</span></span>
-          </div>
-          <div class="cmp-row" role="row">
-            <span class="cmp-cell cmp-label" role="rowheader">Efterlader huden blød, ikke tør</span>
-            <span class="cmp-cell cmp-bd" role="cell"><span class="mark mark-yes" role="img" aria-label="Ja">✓</span></span>
-            <span class="cmp-cell cmp-other" role="cell"><span class="mark mark-no" role="img" aria-label="Nej">✕</span></span>
-          </div>
-          <div class="cmp-row cmp-row--last" role="row">
-            <span class="cmp-cell cmp-label" role="rowheader">Resultater eller penge tilbage</span>
-            <span class="cmp-cell cmp-bd" role="cell"><span class="mark mark-yes" role="img" aria-label="Ja">✓</span></span>
-            <span class="cmp-cell cmp-other" role="cell"><span class="mark mark-no" role="img" aria-label="Nej">✕</span></span>
-          </div>
+        <div class="cmp-note">
+          <span class="circ circ--yes" aria-hidden="true"></span>
+          <p>Barrier Defense er udviklet sammen med dermatologer — <strong>til moden, tør og sensitiv hud.</strong></p>
         </div>
 
         <div class="section-cta"><a href="https://kjeldgaards.com/checkout/" class="cta cta--inline" data-cta data-btn="compare">Deltag nu</a></div>

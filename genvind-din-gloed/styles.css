@@ -17,6 +17,7 @@
   --gold-soft:  #E7DCC6;
   --tp-green:   #00B67A;    /* Trustpilot green — untouched */
   --brick:      #A94A42;    /* muted brick red — "nej" crosses (AA-tuned) */
+  --ok-green:   #1F7A55;    /* deep calm green — "ja" checks (white glyph passes AA) */
   --rule:       #E8E0D3;   /* soft warm hairline — dividers whisper */
   --accent-tint: #E7EDEF;  /* soft fill for step-number circles */
 
@@ -2315,50 +2316,57 @@ body.lb-open { overflow: hidden; }
    ============================================================ */
 .compare-sub { font-family: var(--font-sans); font-size: clamp(1rem, 2vw, 1.1rem); color: var(--ink-soft); margin: 12px auto 0; max-width: 46ch; line-height: 1.55; }
 
-.compare {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 118px 118px;
-  align-items: stretch;
-  max-width: 600px; margin: 30px auto 0;
-}
-.cmp-row { display: contents; }
-
-/* raised panel over the Barrier Defense column (absolute, so it doesn't
-   affect grid auto-placement — the middle+right columns are fixed-width) */
-.cmp-panel {
-  position: absolute; top: 0; bottom: 0; right: 118px; width: 118px;
+/* Card table: bottle icons at top, filled green/red circle marks, zebra rows */
+.cmp {
+  max-width: 600px; margin: 34px auto 0;
   background: var(--paper);
+  border: 1px solid var(--rule);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
-  border-top: 3px solid var(--marine);
-  z-index: 0;
+  overflow: hidden;
 }
-.cmp-cell {
-  position: relative; z-index: 1;
-  display: flex; align-items: center;
-  padding: 20px 16px;
-  border-bottom: 1px solid var(--rule);
+.cmp-heads, .cmp-r {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) 1fr 1fr;
+  align-items: center;
 }
-.cmp-row--last .cmp-cell { border-bottom: 0; }
+.cmp-heads { border-bottom: 1px solid var(--rule); }
+.cmp-r:nth-child(even) { background: #F3EFE7; }   /* zebra — .cmp-heads is child 1 */
 
-.cmp-label { justify-content: flex-start; font-size: 18px; line-height: 1.4; color: var(--ink); }
-.cmp-bd, .cmp-other { justify-content: center; text-align: center; }
+.cmp-c { padding: 16px 14px; text-align: center; }
+.cmp-c-lbl { text-align: left; font-size: 18px; line-height: 1.35; color: var(--ink); }
+.cmp-c-head { display: flex; flex-direction: column; align-items: center; gap: 8px; padding-top: 16px; padding-bottom: 12px; }
+.cmp-bottle svg { width: 30px; height: 44px; display: block; }
+.cmp-bottle--bd { color: var(--marine); }
+.cmp-bottle--other { color: #BBB6AA; }
+.cmp-cname { font-family: var(--font-sans); font-weight: 700; font-size: 14px; color: var(--ink); }
+.cmp-c-other .cmp-cname { color: var(--ink-soft); font-weight: 600; }
+.cmp-c-mark { display: flex; align-items: center; justify-content: center; }
 
-.cmp-colhead { font-family: var(--font-sans); font-weight: 700; font-size: 15px; letter-spacing: .01em; }
-.cmp-bd.cmp-colhead { color: var(--ink); padding-top: 22px; }
-.cmp-other.cmp-colhead { color: var(--ink-soft); font-weight: 600; }
+.circ {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 14px; font-weight: 700; line-height: 1;
+}
+.circ--yes { background: var(--ok-green); }
+.circ--no { background: var(--brick); }
+.circ--yes::before { content: "✓"; }
+.circ--no::before { content: "✕"; }
 
-.mark { font-size: 21px; line-height: 1; font-weight: 700; }
-.mark-yes { color: var(--marine); }
-.mark-no { color: var(--brick); }
+/* bottom callout */
+.cmp-note {
+  display: flex; gap: 12px; align-items: flex-start;
+  max-width: 560px; margin: 20px auto 0;
+  background: var(--paper); border: 1px solid var(--rule);
+  border-radius: var(--radius-md); padding: 16px 18px;
+}
+.cmp-note .circ { flex: 0 0 auto; margin-top: 1px; }
+.cmp-note p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ink-soft); }
+.cmp-note strong { color: var(--ink); font-weight: 700; }
 
 @media (max-width: 560px) {
-  .compare { grid-template-columns: minmax(0, 1fr) 74px 74px; max-width: 100%; }
-  .cmp-panel { right: 74px; width: 74px; }
-  .cmp-cell { padding: 16px 8px; }
-  .cmp-label { font-size: 18px; }
-  .cmp-colhead { font-size: 12.5px; line-height: 1.2; }
-  .cmp-bd.cmp-colhead { padding-top: 18px; }
-  .mark { font-size: 19px; }
+  .cmp-heads, .cmp-r { grid-template-columns: minmax(0, 1fr) 62px 62px; }
+  .cmp-c { padding: 14px 10px; }
+  .cmp-bottle svg { width: 26px; height: 38px; }
+  .cmp-cname { font-size: 12.5px; line-height: 1.15; }
 }
