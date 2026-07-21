@@ -62,7 +62,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom CSS (versioned to bust the 1yr cache on deploy) -->
-  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=17" />
+  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=18" />
 
   <!-- Critical guard: lives in the always-fresh HTML so a stale/cached
        stylesheet can never blow up inline SVGs or the rotator again. -->
@@ -227,13 +227,19 @@
         </div>
 
         <div class="cx-wrap">
-          <img class="cx-bottle cx-bottle-bd" src="/genvind-din-gloed/assets/comparison/barrier-defense.webp" alt="Kjeldgaards Barrier Defense Serum" width="210" height="493" loading="lazy" decoding="async" />
-          <span class="cx-bottle cx-bottle-other" aria-hidden="true"><svg viewBox="0 0 44 70" fill="currentColor" aria-hidden="true"><rect x="17" y="0" width="10" height="14" rx="2.5"/><rect x="19.5" y="12" width="5" height="8"/><rect x="7" y="19" width="30" height="49" rx="9"/></svg></span>
           <div class="cx" role="table" aria-label="Barrier Defense sammenlignet med andre serum">
-            <div class="cx-bar" role="row">
-              <span class="cx-c cx-lbl" role="columnheader" aria-label="Egenskab"></span>
-              <span class="cx-c cx-hbd" role="columnheader">Barrier Defense</span>
-              <span class="cx-c cx-hother" role="columnheader">Andre serum</span>
+            <span class="cx-hl" aria-hidden="true"></span>
+            <div class="cx-head" role="row">
+              <span class="cx-c cx-lbl cx-lbl-head" role="columnheader" aria-label="Egenskab"></span>
+              <span class="cx-c cx-hcell cx-hbd" role="columnheader">
+                <span class="cx-tag">Anbefalet</span>
+                <img class="cx-prod cx-prod-bd" src="/genvind-din-gloed/assets/comparison/barrier-defense.webp" alt="Kjeldgaards Barrier Defense Serum" width="210" height="493" loading="lazy" decoding="async" />
+                <span class="cx-hname">Barrier Defense</span>
+              </span>
+              <span class="cx-c cx-hcell cx-hother" role="columnheader">
+                <img class="cx-prod cx-prod-other" src="/genvind-din-gloed/assets/comparison/andre-serum.webp" alt="" aria-hidden="true" width="300" height="268" loading="lazy" decoding="async" />
+                <span class="cx-hname">Andre serum</span>
+              </span>
             </div>
             <div class="cx-r" role="row">
               <span class="cx-c cx-lbl" role="rowheader">Blid mod sart hud</span>
