@@ -2346,7 +2346,7 @@ body.lb-open { overflow: hidden; }
 /* header cells hold the product image + name */
 .cx-hcell {
   display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
-  gap: 12px; padding: 30px 12px 18px; min-height: 208px; position: relative;
+  gap: 12px; padding: 26px 12px 18px; min-height: 208px; position: relative;
 }
 .cx-prod { width: auto; display: block; }
 .cx-prod-bd { height: 158px; filter: drop-shadow(0 10px 20px rgba(16,42,67,.24)); }
@@ -2354,15 +2354,6 @@ body.lb-open { overflow: hidden; }
 .cx-hname { font-family: var(--font-sans); font-weight: 700; font-size: 15px; letter-spacing: .01em; }
 .cx-hbd .cx-hname { color: var(--marine-700); }
 .cx-hother .cx-hname { color: var(--ink-soft); font-weight: 600; }
-
-/* "Anbefalet" pill */
-.cx-tag {
-  position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
-  font-family: var(--font-sans); font-size: 10.5px; font-weight: 700;
-  letter-spacing: .09em; text-transform: uppercase; white-space: nowrap;
-  color: var(--marine-700); background: #E7EDEF;
-  padding: 4px 11px; border-radius: var(--radius-pill);
-}
 
 .cx-r { border-top: 1px solid var(--rule); }
 
@@ -2399,6 +2390,5 @@ body.lb-open { overflow: hidden; }
   .cx-prod-bd { height: 118px; }
   .cx-prod-other { height: 84px; }
   .cx-hname { font-size: 12.5px; }
-  .cx-tag { font-size: 9px; padding: 3px 8px; top: 8px; }
   .cx-badge { width: 26px; height: 26px; font-size: 14px; }
 }
