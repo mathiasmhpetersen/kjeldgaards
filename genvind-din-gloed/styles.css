@@ -2317,7 +2317,7 @@ body.lb-open { overflow: hidden; }
 .compare-sub { font-family: var(--font-sans); font-size: clamp(1rem, 2vw, 1.1rem); color: var(--ink-soft); margin: 12px auto 0; max-width: 46ch; line-height: 1.55; }
 
 /* Designed comparison: marine header bar, product tucked above, highlighted BD column */
-.cx-wrap { position: relative; max-width: 600px; margin: 116px auto 0; }
+.cx-wrap { position: relative; max-width: 600px; margin: 124px auto 0; }
 .cx {
   background: var(--paper); border: 1px solid var(--rule);
   border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
@@ -2347,7 +2347,7 @@ body.lb-open { overflow: hidden; }
 
 /* product / bottle peeking above the bar */
 .cx-bottle { position: absolute; z-index: 3; }
-.cx-bottle-bd { right: 158px; top: -108px; width: 62px; height: auto; filter: drop-shadow(0 8px 16px rgba(16,42,67,.32)); }
+.cx-bottle-bd { right: 160px; top: -120px; width: 54px; height: auto; filter: drop-shadow(0 8px 16px rgba(16,42,67,.28)); }
 .cx-bottle-other { right: 43px; top: -64px; width: 42px; color: #B4AFA3; }
 .cx-bottle-other svg { width: 100%; height: auto; display: block; }
 
@@ -2366,10 +2366,10 @@ body.lb-open { overflow: hidden; }
 .cx-trust { text-align: center; margin: 18px auto 0; font-size: 14px; color: var(--ink-soft); max-width: 520px; }
 
 @media (max-width: 560px) {
-  .cx-wrap { margin-top: 100px; }
+  .cx-wrap { margin-top: 108px; }
   .cx-bar, .cx-r { grid-template-columns: minmax(0, 1fr) 64px 64px; }
   .cx-c { padding: 14px 8px; }
   .cx-hbd, .cx-hother { font-size: 12.5px; }
-  .cx-bottle-bd { right: 80px; top: -96px; width: 54px; }
+  .cx-bottle-bd { right: 82px; top: -106px; width: 46px; }
   .cx-bottle-other { right: 20px; top: -56px; width: 36px; }
 }
