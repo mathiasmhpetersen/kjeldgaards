@@ -62,7 +62,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom CSS (versioned to bust the 1yr cache on deploy) -->
-  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=20" />
+  <link rel="stylesheet" href="/genvind-din-gloed/styles.css?v=21" />
 
   <!-- Critical guard: lives in the always-fresh HTML so a stale/cached
        stylesheet can never blow up inline SVGs or the rotator again. -->
@@ -201,13 +201,27 @@
     </section>
 
     <!-- ============================================================
-         1.5 · Grundlægger — Morten (tekst + video)
+         2 · Anmeldelser — sidens største sektion
+         ============================================================ -->
+    <section class="section section--mist">
+      <div class="wrap reveal">
+        <div class="section-head">
+          <hr class="gold-rule gold-rule--center" />
+          <h2>Hvad nogle af vores kunder siger</h2>
+        </div>
+        <!-- Masonry bygget fra assets/reviews/manifest.js — antal læses fra mappen, aldrig hardcodet. Klik zoomer et billede op. -->
+        <div class="fb-reviews" data-fb-reviews></div>
+        <div class="section-cta"><a href="https://kjeldgaards.com/checkout/" class="cta cta--inline" data-cta data-btn="reviews">Deltag nu</a></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2.5 · Grundlægger — Morten (tekst + video)
          ============================================================ -->
     <section class="section fv-section">
       <div class="wrap reveal">
         <div class="fv-grid">
           <div class="fv-head">
-            <p class="fv-eyebrow">Grundlæggeren</p>
             <h2>Grundlagt af danseren, Morten Kjeldgaard</h2>
           </div>
 
@@ -233,21 +247,6 @@
             <p>I 2021 opsøgte jeg nogle af landets mest anerkendte dermatologer, og sammen udviklede vi et serum, der genskaber hudens naturlige glød — og sådan blev Barrier Defense til.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         2 · Anmeldelser — sidens største sektion
-         ============================================================ -->
-    <section class="section section--mist">
-      <div class="wrap reveal">
-        <div class="section-head">
-          <hr class="gold-rule gold-rule--center" />
-          <h2>Hvad nogle af vores kunder siger</h2>
-        </div>
-        <!-- Masonry bygget fra assets/reviews/manifest.js — antal læses fra mappen, aldrig hardcodet. Klik zoomer et billede op. -->
-        <div class="fb-reviews" data-fb-reviews></div>
-        <div class="section-cta"><a href="https://kjeldgaards.com/checkout/" class="cta cta--inline" data-cta data-btn="reviews">Deltag nu</a></div>
       </div>
     </section>
 
