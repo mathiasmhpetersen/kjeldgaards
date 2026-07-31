@@ -417,3 +417,87 @@
   })();
 
 })();
+
+/* ============================================================
+ * Facebook-anmeldelser: masonry + lightbox (porteret fra genvind-din-gloed)
+ * Selvstændig IIFE — læser window.KJELDGAARDS_REVIEWS fra manifest.js.
+ * ============================================================ */
+(function () {
+  var REVIEW_BASE = '/barrier-defense-serum/assets/reviews/';
+  var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  var host = document.querySelector('[data-fb-reviews]');
+  var data = window.KJELDGAARDS_REVIEWS;
+  if (!host || !data || !data.length) return;
+
+  var frag = document.createDocumentFragment();
+  data.forEach(function (r, i) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'fb-review';
+    btn.setAttribute('aria-label', 'Åbn anmeldelse ' + (i + 1) + ' af ' + data.length);
+    var img = document.createElement('img');
+    img.src = REVIEW_BASE + r.file;
+    img.alt = r.alt || 'Facebook-anmeldelse af Barrier Defense';
+    if (r.w) img.width = r.w;
+    if (r.h) img.height = r.h;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.draggable = false;
+    btn.appendChild(img);
+    btn.addEventListener('click', function () { openRlb(i); });
+    frag.appendChild(btn);
+  });
+  host.appendChild(frag);
+
+  var lb = document.querySelector('[data-review-lightbox]');
+  if (!lb) return;
+  var lbImg = lb.querySelector('[data-rlbimg]');
+  var lbCount = lb.querySelector('[data-rlbcounter]');
+  var lbStage = lb.querySelector('[data-rlbstage]');
+  var idx = 0, open = false, lastFocus = null;
+
+  function paint() {
+    var r = data[idx];
+    lbImg.src = REVIEW_BASE + r.file;
+    lbImg.alt = r.alt || 'Facebook-anmeldelse af Barrier Defense';
+    if (lbCount) lbCount.textContent = (idx + 1) + ' / ' + data.length;
+  }
+  function openRlb(i) {
+    idx = i; open = true; lastFocus = document.activeElement;
+    paint();
+    lb.hidden = false;
+    document.body.classList.add('lb-open');
+    window.requestAnimationFrame(function () { lb.classList.add('is-open'); });
+    var c = lb.querySelector('[data-rlbclose]');
+    if (c && c.focus) c.focus();
+  }
+  function closeRlb() {
+    if (!open) return;
+    open = false;
+    lb.classList.remove('is-open');
+    document.body.classList.remove('lb-open');
+    window.setTimeout(function () { if (!open) lb.hidden = true; }, reduceMotion ? 0 : 220);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function stepR(d) {
+    idx = (idx + d + data.length) % data.length;
+    if (lbStage) {
+      lbStage.classList.add('is-swapping');
+      window.setTimeout(function () { paint(); lbStage.classList.remove('is-swapping'); }, reduceMotion ? 0 : 110);
+    } else { paint(); }
+  }
+
+  [].slice.call(lb.querySelectorAll('[data-rlbclose]')).forEach(function (el) {
+    el.addEventListener('click', function (e) { e.stopPropagation(); closeRlb(); });
+  });
+  var p = lb.querySelector('[data-rlbprev]'), n = lb.querySelector('[data-rlbnext]');
+  if (p) p.addEventListener('click', function (e) { e.stopPropagation(); stepR(-1); });
+  if (n) n.addEventListener('click', function (e) { e.stopPropagation(); stepR(1); });
+  document.addEventListener('keydown', function (e) {
+    if (!open) return;
+    if (e.key === 'Escape') closeRlb();
+    else if (e.key === 'ArrowLeft') stepR(-1);
+    else if (e.key === 'ArrowRight') stepR(1);
+  });
+})();
