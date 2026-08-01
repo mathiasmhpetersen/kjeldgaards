@@ -1139,7 +1139,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   overflow: hidden;
   transition: max-height .25s ease;
 }
-.faq-item.is-open .faq-a { max-height: 600px; }
+.faq-item.is-open .faq-a { max-height: 1200px; }
 .faq-a-inner {
   padding: 0 0 20px;
   font-size: 16px;
@@ -1147,6 +1147,11 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   color: var(--ink-soft);
   max-width: 60ch;
 }
+.faq-a-inner p { margin: 0 0 12px; }
+.faq-a-inner p:last-child { margin-bottom: 0; }
+.faq-a-inner ol { list-style: decimal; margin: 0 0 12px; padding-left: 1.4em; }
+.faq-a-inner li { margin: 0 0 8px; }
+.faq-a-inner li:last-child { margin-bottom: 0; }
 
 /* Two-column FAQ — accordion left, image right */
 .faq-layout {
