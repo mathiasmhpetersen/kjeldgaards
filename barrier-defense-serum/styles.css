@@ -1,37 +1,59 @@
 /* Kjeldgaards Barrier Defense — pre-sell product page
- * Marine luxury design system: deep navy + matte gold + cream.
- * Restraint as the luxury signal. Body min 18px for 50+ eyes.
+ * Design system: frosted glass + brass.
+ * Cool frost canvas, white floating cards, deep petrol text, one warm brass note.
+ * Grounded in the product's material: frosted blue glass bottle, gold pipette,
+ * Nordic daylight. Restraint as the luxury signal. Body min 17px for 45–65 eyes.
  */
 
 :root {
-  --ink:        #14202B;
-  --deep:       #102A43;
-  --marine:     #1E6F9F;
-  --marine-700: #155B85;
-  --azure-mist: #EAF2F7;
-  --cream:      #FBFAF7;
-  --paper:      #FFFFFF;
-  --ink-soft:   #5A6B78;
-  --gold:       #C2A35B;
-  --gold-soft:  #E4D6B0;
-  --tp-green:   #00B67A;
-  --rule:       #E1DACA;
+  /* ---- Frosted-glass + brass palette (single source of truth) ---- */
+  --glas:       #EDF1F2;   /* frosted blue-grey — page canvas */
+  --rim:        #FFFFFF;   /* white — cards / surfaces floating on the frost */
+  --dyb:        #14323C;   /* deep petrol — primary text, primary buttons */
+  --dis:        #7E949C;   /* muted blue-grey — captions, dividers, quiet labels */
+  --messing:    #B08D57;   /* brass (the pipette) — accents only, never a fill */
+  --messing-soft: #D8C39A; /* lighter brass — accents on dark bands */
+  --messing-deep: #8F6F42; /* darker brass — hairline gradients, hover */
+  --hud:        #E7D9CE;   /* muted skin/sand — max two places on the page */
+  --tp:         #00B67A;   /* Trustpilot green — only inside the official widget */
 
-  /* Tokens brugt af de porterede genvind-sektioner (trust-strip, anmeldelser, klinisk, sammenligning) */
-  --brick:      #A94A42;   /* muted brick red — "nej" crosses (AA-tuned) */
-  --ok-green:   #1F7A55;   /* deep calm green — "ja" checks (white glyph passes AA) */
-  --accent-tint:#E7EDEF;   /* soft fill for step-number circles */
-  --radius-sm:  10px;
-  --radius-md:  16px;
-  --radius-lg:  24px;
-  --shadow-card: 0 1px 2px rgba(24,53,66,.04), 0 10px 30px rgba(24,53,66,.06);
+  /* ---- Legacy token names remapped onto the new palette so every existing
+         rule adopts the frosted-glass system without a per-rule rewrite. ---- */
+  --ink:        var(--dyb);
+  --deep:       var(--dyb);
+  --marine:     var(--dyb);      /* was cold SaaS blue — now petrol */
+  --marine-700: #0E252C;
+  --azure-mist: #E3EAEC;
+  --cream:      var(--glas);
+  --paper:      var(--rim);
+  --ink-soft:   #566A72;         /* AA-passing secondary (≥4.5:1 on white/glas) */
+  --gold:       var(--messing);
+  --gold-soft:  var(--messing-soft);
+  --gold-deep:  var(--messing-deep);
+  --tp-green:   var(--tp);
+  --rule:       #DBE2E4;         /* cool hairline (was warm sand) */
 
-  --font-serif: 'Playfair Display', 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --brick:      #A94A42;   /* comparison "nej" crosses */
+  --ok-green:   #1F7A55;   /* comparison "ja" checks */
+  --accent-tint:#E4EBEE;   /* soft cool fill for step-number circles */
+
+  /* ---- Radius scale: 4 / 12 / 20 / 999 ---- */
+  --radius-sm:  4px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+
+  /* ---- Two shadows only ---- */
+  --shadow-sm:   0 1px 2px rgba(20,50,60,.05);
+  --shadow-lift: 0 12px 32px -16px rgba(20,50,60,.18);
+  --shadow-card: var(--shadow-lift);   /* legacy alias */
+
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
   --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 
-  --section-pad: clamp(4.5rem, 10vh, 7rem);
-  --measure: 680px;
-  --maxw: 1180px;
+  /* ---- Rhythm: 64 mobile / 112 desktop ---- */
+  --section-pad: clamp(4rem, 9vw, 7rem);
+  --measure: 640px;
+  --maxw: 1120px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -59,10 +81,10 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--marine);
+  color: var(--ink-soft);
   margin: 0 0 18px;
 }
-.eyebrow.on-deep { color: var(--gold); }
+.eyebrow.on-deep { color: var(--messing-soft); }
 
 h1, h2, h3 {
   font-family: var(--font-serif);
@@ -108,25 +130,25 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   padding-top: var(--section-pad);
   padding-bottom: var(--section-pad);
 }
-/* Tonal depth — never flat fills (art-direction north star) */
-.section--mist  { background: linear-gradient(180deg, #EFF5F9 0%, #EAF2F7 100%); }
-.section--paper { background: linear-gradient(180deg, #F6F1E9 0%, #FBFAF7 55%); }
+/* Tonal depth — never flat fills (art-direction north star). Cool frost only. */
+.section--mist  { background: linear-gradient(180deg, #F3F6F7 0%, #E7ECEE 100%); }
+.section--paper { background: linear-gradient(180deg, #FFFFFF 0%, #EDF1F2 100%); }
 .section--deep  {
   position: relative;
-  color: #DCE7EF;
+  color: #D6E0E2;
   background:
-    radial-gradient(120% 90% at 50% 0%, rgba(196,163,91,0.14) 0%, rgba(196,163,91,0) 55%),
-    linear-gradient(180deg, #0E2233 0%, #102A43 100%);
+    radial-gradient(120% 90% at 50% 0%, rgba(176,141,87,0.16) 0%, rgba(176,141,87,0) 55%),
+    linear-gradient(180deg, #0F2A32 0%, #14323C 100%);
 }
 .section--deep h1, .section--deep h2, .section--deep h3 { color: #FFFFFF; }
 
 .gold-rule {
-  width: 48px;
+  width: 24px;
   height: 2px;
-  background: linear-gradient(90deg, #E4D6B0 0%, #C2A35B 50%, #A8843F 100%);
+  background: var(--messing);
   border: 0;
   border-radius: 999px;
-  margin: 0 0 18px;
+  margin: 0 0 16px;
 }
 .gold-rule--center { margin-left: auto; margin-right: auto; }
 
@@ -138,9 +160,10 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 .reveal.is-in .gold-rule,
 .reveal.is-in.gold-rule { transform: scaleX(1); }
 
-/* Fraunces italic emphasis word in headlines */
-.accent-italic { font-style: italic; font-weight: 500; color: var(--marine); }
-.on-deep-accent { color: var(--gold-soft); }
+/* The type signature: true-italic emphasis clause in brass inside every headline */
+.accent-italic { font-style: italic; font-weight: 500; color: var(--messing); }
+.on-deep-accent { color: var(--messing-soft); }
+.section--deep .accent-italic { color: var(--messing-soft); }
 
 /* === Top trust bar === */
 .trust-bar {
@@ -209,7 +232,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   position: absolute;
   left: 0; right: 0; bottom: -2px;
   height: 1.5px;
-  background: linear-gradient(90deg, #C2A35B, #A8843F);
+  background: linear-gradient(90deg, var(--messing), var(--messing-deep));
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform .25s ease;
@@ -222,7 +245,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 .header-cta {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(180deg, #16314A 0%, #102A43 100%);
+  background: linear-gradient(180deg, #16314A 0%, var(--dyb) 100%);
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -340,7 +363,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   white-space: nowrap;
 }
 .float-pill .pill-stars {
-  background: linear-gradient(90deg, #E4D6B0 0%, #C2A35B 50%, #A8843F 100%);
+  background: linear-gradient(90deg, var(--messing-soft) 0%, var(--messing) 50%, var(--messing-deep) 100%);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 13px;
@@ -352,7 +375,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   width: 18px; height: 18px; border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
   font-family: var(--font-serif); font-size: 10px; font-weight: 700; color: #fff;
-  background: linear-gradient(135deg, #C2A35B, #A8843F);
+  background: linear-gradient(135deg, var(--messing), var(--messing-deep));
 }
 @media (max-width: 520px) {
   .float-pill { font-size: 11px; padding: 6px 10px; }
@@ -542,7 +565,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   position: absolute;
   top: -10px;
   right: 14px;
-  background: linear-gradient(135deg, #E4D6B0 0%, #C2A35B 50%, #A8843F 100%);
+  background: linear-gradient(135deg, var(--messing-soft) 0%, var(--messing) 50%, var(--messing-deep) 100%);
   color: #2A2410;
   font-size: 10px;
   font-weight: 700;
@@ -558,7 +581,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   width: 100%;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, #16314A 0%, #102A43 100%);
+  background: linear-gradient(180deg, #16314A 0%, var(--dyb) 100%);
   color: #fff;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -914,7 +937,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   padding: 26px 18px;
   border: 1px solid var(--rule);
   border-radius: 16px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FBFAF7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--glas) 100%);
   box-shadow: 0 1px 2px rgba(20,32,43,.04), 0 8px 24px rgba(20,32,43,.06);
   display: flex;
   flex-direction: column;
@@ -924,7 +947,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   border: 1.5px solid transparent;
   background:
     linear-gradient(180deg, #FFFFFF 0%, #F7F2E6 100%) padding-box,
-    linear-gradient(135deg, #E4D6B0, #C2A35B 55%, #A8843F) border-box;
+    linear-gradient(135deg, var(--messing-soft), var(--messing) 55%, var(--messing-deep)) border-box;
   box-shadow: 0 2px 6px rgba(168,132,63,.10), 0 16px 40px rgba(20,32,43,.10);
 }
 .value-reframe .compare .label {
@@ -936,7 +959,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   margin-bottom: 8px;
 }
 .value-reframe .compare .col.is-bd .label {
-  background: linear-gradient(90deg, #C2A35B, #A8843F);
+  background: linear-gradient(90deg, var(--messing), var(--messing-deep));
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1023,7 +1046,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   font-family: var(--font-serif);
   font-size: clamp(3.5rem, 8vw, 5rem);
   font-weight: 500;
-  background: linear-gradient(135deg, #E4D6B0, #C2A35B 60%, #A8843F);
+  background: linear-gradient(135deg, var(--messing-soft), var(--messing) 60%, var(--messing-deep));
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1065,8 +1088,8 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   border-radius: 50%;
   border: 1.5px solid transparent;
   background:
-    linear-gradient(#0E2233, #102A43) padding-box,
-    linear-gradient(135deg, #E4D6B0, #C2A35B 50%, #A8843F) border-box;
+    linear-gradient(#0E2233, var(--dyb)) padding-box,
+    linear-gradient(135deg, var(--messing-soft), var(--messing) 50%, var(--messing-deep)) border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1080,7 +1103,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   box-shadow: 0 0 0 6px rgba(196,163,91,.08), 0 14px 36px rgba(0,0,0,.35);
 }
 .guarantee .seal span {
-  background: linear-gradient(135deg, #E4D6B0, #C2A35B 60%, #A8843F);
+  background: linear-gradient(135deg, var(--messing-soft), var(--messing) 60%, var(--messing-deep));
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1353,7 +1376,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 /* Pull-quote card (supporting visual on otherwise-empty side) */
 .pull-quote {
   position: relative;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FBFAF7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--glas) 100%);
   border: 1px solid var(--rule);
   border-radius: 16px;
   padding: 34px 30px 30px;
@@ -1379,7 +1402,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 .pull-quote .pq-mark {
   display: block;
   width: 40px; height: 2px;
-  background: linear-gradient(90deg, #C2A35B, #A8843F);
+  background: linear-gradient(90deg, var(--messing), var(--messing-deep));
   border-radius: 999px;
   margin-top: 20px;
 }
@@ -1388,7 +1411,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 .split-visual .collagen-figure {
   margin: 0;
   max-width: 520px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FBFAF7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--glas) 100%);
   border: 1px solid var(--rule);
   border-radius: 16px;
   padding: 22px 22px 16px;
@@ -1421,7 +1444,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   display: flex;
   align-items: flex-start;
   gap: 13px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FBFAF7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--glas) 100%);
   border: 1px solid var(--rule);
   border-radius: 16px;
   padding: 18px 18px;
@@ -1437,7 +1460,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   margin-top: 1px;
   background:
     linear-gradient(#FFFFFF, #FFFFFF) padding-box,
-    linear-gradient(135deg, #E4D6B0, #C2A35B 60%, #A8843F) border-box;
+    linear-gradient(135deg, var(--messing-soft), var(--messing) 60%, var(--messing-deep)) border-box;
   border: 1.5px solid transparent;
 }
 .concern .tick svg { width: 14px; height: 14px; color: var(--gold); }
@@ -1457,7 +1480,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 .ctable {
   max-width: 860px;
   margin: 0 auto;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FBFAF7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--glas) 100%);
   border: 1px solid var(--rule);
   border-radius: 18px;
   box-shadow: 0 1px 2px rgba(20,32,43,.04), 0 14px 40px rgba(20,32,43,.08);
@@ -1517,7 +1540,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 }
 @media (min-width: 720px) { .archetypes { grid-template-columns: 1fr 1fr; } }
 .archetype {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FBFAF7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--glas) 100%);
   border: 1px solid var(--rule);
   border-left: 3px solid var(--gold);
   border-radius: 14px;
@@ -1574,7 +1597,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 .statement-band .statement em {
   font-style: italic;
   font-weight: 500;
-  background: linear-gradient(90deg, #E4D6B0, #C2A35B 60%, #D9C589);
+  background: linear-gradient(90deg, var(--messing-soft), var(--messing) 60%, #D9C589);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1601,7 +1624,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   scroll-snap-align: start;
   flex: 0 0 auto;
   width: 250px;
-  background: linear-gradient(180deg, #FBF8F1 0%, #F4EEE3 100%);
+  background: linear-gradient(180deg, #F6F9FA 0%, #E7EDEE 100%);
   border: 1px solid var(--rule);
   border-radius: 16px;
   padding: 24px 22px 22px;
@@ -1634,8 +1657,8 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 .carousel-edge {
   position: absolute; top: 0; bottom: 18px; width: 56px; pointer-events: none; z-index: 2;
 }
-.carousel-edge.left  { left: 0;  background: linear-gradient(90deg, var(--edge-fade, #FBFAF7), rgba(251,250,247,0)); }
-.carousel-edge.right { right: 0; background: linear-gradient(270deg, var(--edge-fade, #FBFAF7), rgba(251,250,247,0)); }
+.carousel-edge.left  { left: 0;  background: linear-gradient(90deg, var(--edge-fade, var(--glas)), rgba(251,250,247,0)); }
+.carousel-edge.right { right: 0; background: linear-gradient(270deg, var(--edge-fade, var(--glas)), rgba(251,250,247,0)); }
 .carousel-edge.is-hidden { opacity: 0; }
 .carousel-controls { display: flex; gap: 10px; margin-top: 6px; }
 .carousel-btn {
@@ -1691,7 +1714,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FBFAF7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--glas) 100%);
 }
 .ugc-quote .stars { color: var(--tp-green); font-size: 14px; margin-bottom: 10px; }
 .ugc-quote p {
@@ -1734,7 +1757,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   position: absolute;
   left: 39px; top: 8px; bottom: 8px;
   width: 2px;
-  background: linear-gradient(180deg, #E4D6B0, #C2A35B 50%, rgba(168,132,63,0.25));
+  background: linear-gradient(180deg, var(--messing-soft), var(--messing) 50%, rgba(168,132,63,0.25));
 }
 @media (max-width: 560px) { .timeline::before { left: 31px; } }
 .tl-step {
@@ -1751,8 +1774,8 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   width: 70px; height: 70px; border-radius: 50%;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   background:
-    linear-gradient(#FBFAF7, #F4EEE3) padding-box,
-    linear-gradient(135deg, #E4D6B0, #C2A35B 55%, #A8843F) border-box;
+    linear-gradient(var(--glas), #E7EDEE) padding-box,
+    linear-gradient(135deg, var(--messing-soft), var(--messing) 55%, var(--messing-deep)) border-box;
   border: 2px solid transparent;
   box-shadow: 0 6px 18px rgba(168,132,63,.18);
   text-align: center;
@@ -1786,7 +1809,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 @media (min-width: 560px) { .howto-grid { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 920px) { .howto-grid { grid-template-columns: repeat(4, 1fr); } }
 .howto-step {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FBFAF7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--glas) 100%);
   border: 1px solid var(--rule);
   border-radius: 16px;
   padding: 22px 20px 24px;
@@ -1889,7 +1912,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
 .usp::before {
   content: "";
   width: 7px; height: 7px; border-radius: 50%;
-  background: linear-gradient(135deg, #C2A35B, #A8843F);
+  background: linear-gradient(135deg, var(--messing), var(--messing-deep));
   flex: 0 0 auto;
 }
 .usp.is-active { opacity: 1; transform: none; }
@@ -1960,7 +1983,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   gap: 10px;
   margin: 0 0 16px;
   padding: 11px 14px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FBFAF7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--glas) 100%);
   border: 1px solid var(--rule);
   border-radius: 12px;
   font-size: 13.5px;
@@ -1991,7 +2014,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   font-weight: 700;
   letter-spacing: 0.04em;
   color: #2A2410;
-  background: linear-gradient(135deg, #E4D6B0 0%, #C2A35B 55%, #A8843F 100%);
+  background: linear-gradient(135deg, var(--messing-soft) 0%, var(--messing) 55%, var(--messing-deep) 100%);
   padding: 3px 9px;
   border-radius: 999px;
 }
