@@ -62,7 +62,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom CSS (versioned to bust the 1yr cache on deploy) -->
-  <link rel="stylesheet" href="/barrier-defense-serum/styles.css?v=13" />
+  <link rel="stylesheet" href="/barrier-defense-serum/styles.css?v=15" />
 
   <!-- Critical guard: lives in the always-fresh HTML so a stale/cached
        stylesheet can never blow up inline SVGs or the rotator again. -->
@@ -401,57 +401,67 @@
       <div class="wrap reveal">
         <div style="text-align:center; max-width: 640px; margin: 0 auto 26px;">
           <hr class="gold-rule gold-rule--center" />
-          <h2>170+ kvinder har givet den fem stjerner. Her er nogle af dem.</h2>
+          <h2>Sådan oplever vores kunder <span class="accent-italic">Barrier Defense</span></h2>
           <div class="tp-head">
             <span class="stars" aria-hidden="true">★★★★★</span>
-            <span>4,7 på Trustpilot · 170+ femstjernede anmeldelser</span>
+            <span>4,7 på Trustpilot</span>
           </div>
         </div>
 
-        <div class="review-grid">
-          <article class="review">
-            <div class="stars" aria-label="Fem stjerner">★★★★★</div>
-            <p>"Det glatter de fine linjer ud, og mine mørke rande under øjnene er faktisk væk. Selv min bekymringsrynke i panden er blevet mindre synlig. De varmeste anbefalinger herfra."</p>
-            <p class="reviewer">Bettina Kirkegaard</p>
-          </article>
-          <article class="review">
-            <div class="stars" aria-label="Fem stjerner">★★★★★</div>
-            <p>"Endelig lykkes det mig at finde en serum, som virkelig virker — jeg er bare blevet mega afhængig af den. Kun en varm anbefaling herfra."</p>
-            <p class="reviewer">Pia Anne Marie Hansen</p>
-          </article>
-          <article class="review">
-            <div class="stars" aria-label="Fem stjerner">★★★★★</div>
-            <p>"Jeg er nu på min tredje serum. Så klart forandring efter ca. 14 dage. Nu kan jeg ikke bruge andet."</p>
-            <p class="reviewer">Kristina Johnson</p>
-          </article>
-          <article class="review">
-            <div class="stars" aria-label="Fem stjerner">★★★★★</div>
-            <p>"Var lidt skeptisk inden jeg købte, men efter 3 måneder kan jeg kun anbefale produktet. De synlige rynker er blevet meget mindre, og min hud er blevet pæn og glat."</p>
-            <p class="reviewer">Nina Eben Jensen</p>
-          </article>
-          <article class="review">
-            <div class="stars" aria-label="Fem stjerner">★★★★★</div>
-            <p>"Perfekt at man kan få ét produkt imod fine rynker, brune pletter og som giver strålende hud. Alt hvad mit ansigt behøver."</p>
-            <p class="reviewer">Karina Olsen</p>
-          </article>
-          <article class="review">
-            <div class="stars" aria-label="Fem stjerner">★★★★★</div>
-            <p>"Skøn let serum, der gør underværker. Jeg har haft udfordringer med rødme og knopper, men det er forsvundet, og min hud er fugtet og mere elastisk."</p>
-            <p class="reviewer">Maiken Lind</p>
-          </article>
-          <article class="review">
-            <div class="stars" aria-label="Fem stjerner">★★★★★</div>
-            <p>"Har nu brugt det i 1 år og vil slet ikke undvære den igen. Aldrig problemer med rød, tør eller irriteret hud, efter jeg begyndte."</p>
-            <p class="reviewer">Tina Wiinholt</p>
-          </article>
-          <article class="review">
-            <div class="stars" aria-label="Fem stjerner">★★★★★</div>
-            <p>"Jeg kunne allerede se en forbedring efter halvanden uge, og her 3–4 uger efter tydelig reducering af rynker omkring øjnene."</p>
-            <p class="reviewer">Malene</p>
-          </article>
+        <div class="review-carousel" data-carousel>
+          <button class="carousel-btn review-arrow review-arrow--prev" type="button" data-prev aria-label="Forrige anmeldelser">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="carousel-track review-track" data-track>
+            <article class="review">
+              <div class="stars" aria-label="Fem stjerner">★★★★★</div>
+              <p>"Det glatter de fine linjer ud, og mine mørke rande under øjnene er faktisk væk. Selv min bekymringsrynke i panden er blevet mindre synlig. De varmeste anbefalinger herfra."</p>
+              <p class="reviewer">Bettina Kirkegaard</p>
+            </article>
+            <article class="review">
+              <div class="stars" aria-label="Fem stjerner">★★★★★</div>
+              <p>"Endelig lykkes det mig at finde en serum, som virkelig virker — jeg er bare blevet mega afhængig af den. Kun en varm anbefaling herfra."</p>
+              <p class="reviewer">Pia Anne Marie Hansen</p>
+            </article>
+            <article class="review">
+              <div class="stars" aria-label="Fem stjerner">★★★★★</div>
+              <p>"Jeg er nu på min tredje serum. Så klart forandring efter ca. 14 dage. Nu kan jeg ikke bruge andet."</p>
+              <p class="reviewer">Kristina Johnson</p>
+            </article>
+            <article class="review">
+              <div class="stars" aria-label="Fem stjerner">★★★★★</div>
+              <p>"Var lidt skeptisk inden jeg købte, men efter 3 måneder kan jeg kun anbefale produktet. De synlige rynker er blevet meget mindre, og min hud er blevet pæn og glat."</p>
+              <p class="reviewer">Nina Eben Jensen</p>
+            </article>
+            <article class="review">
+              <div class="stars" aria-label="Fem stjerner">★★★★★</div>
+              <p>"Perfekt at man kan få ét produkt imod fine rynker, brune pletter og som giver strålende hud. Alt hvad mit ansigt behøver."</p>
+              <p class="reviewer">Karina Olsen</p>
+            </article>
+            <article class="review">
+              <div class="stars" aria-label="Fem stjerner">★★★★★</div>
+              <p>"Skøn let serum, der gør underværker. Jeg har haft udfordringer med rødme og knopper, men det er forsvundet, og min hud er fugtet og mere elastisk."</p>
+              <p class="reviewer">Maiken Lind</p>
+            </article>
+            <article class="review">
+              <div class="stars" aria-label="Fem stjerner">★★★★★</div>
+              <p>"Har nu brugt det i 1 år og vil slet ikke undvære den igen. Aldrig problemer med rød, tør eller irriteret hud, efter jeg begyndte."</p>
+              <p class="reviewer">Tina Wiinholt</p>
+            </article>
+            <article class="review">
+              <div class="stars" aria-label="Fem stjerner">★★★★★</div>
+              <p>"Jeg kunne allerede se en forbedring efter halvanden uge, og her 3–4 uger efter tydelig reducering af rynker omkring øjnene."</p>
+              <p class="reviewer">Malene</p>
+            </article>
+          </div>
+          <button class="carousel-btn review-arrow review-arrow--next" type="button" data-next aria-label="Flere anmeldelser">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
 
-        <a class="tp-link" href="https://dk.trustpilot.com/review/kjeldgaards.com" rel="noopener" target="_blank">Læs alle anmeldelser på Trustpilot →</a>
+        <div class="section-cta">
+          <a class="cta cta--inline" href="https://dk.trustpilot.com/review/kjeldgaards.com" rel="noopener" target="_blank">Se alle vores anmeldelser</a>
+        </div>
       </div>
     </section>
 

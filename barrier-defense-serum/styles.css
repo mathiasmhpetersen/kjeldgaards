@@ -2403,3 +2403,33 @@ body.lb-open { overflow: hidden; }
   .cx-hname { font-size: 12.5px; }
   .cx-badge { width: 26px; height: 26px; font-size: 14px; }
 }
+
+/* ============================================================
+   Review carousel — single horizontal row with flanking arrows
+   (reuses [data-carousel]/[data-track] JS; arrows are .carousel-btn)
+   ============================================================ */
+.review-carousel { position: relative; max-width: var(--maxw); margin: 0 auto; padding: 0 40px; }
+.review-track {
+  display: flex; gap: 18px; overflow-x: auto;
+  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; padding: 6px 4px 12px; cursor: grab;
+}
+.review-track::-webkit-scrollbar { display: none; }
+.review-track.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+.review-track .review {
+  scroll-snap-align: start; flex: 0 0 auto; width: 300px;
+  display: flex; flex-direction: column;
+}
+.review-track .review > p:not(.reviewer) { flex: 1 0 auto; }   /* push reviewer to card bottom */
+@media (max-width: 560px) { .review-track .review { width: 80vw; max-width: 320px; } }
+
+/* flanking arrows — vertically centred via margin so hover/disabled transforms don't fight it */
+.review-arrow { position: absolute; top: 50%; margin-top: -22px; z-index: 3; }
+.review-arrow--prev { left: 2px; }
+.review-arrow--next { right: 2px; }
+/* wider side gutter on desktop */
+@media (min-width: 760px) {
+  .review-carousel { padding: 0 56px; }
+  .review-arrow--prev { left: 4px; }
+  .review-arrow--next { right: 4px; }
+}
