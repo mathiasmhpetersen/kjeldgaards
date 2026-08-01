@@ -1148,6 +1148,41 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   max-width: 60ch;
 }
 
+/* Two-column FAQ — accordion left, image right */
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  align-items: center;
+}
+.faq-head { margin-bottom: 24px; text-align: left; }
+.faq-head .eyebrow { margin-bottom: 14px; }
+.faq-head .gold-rule { margin: 0 0 16px; }
+.faq-head h2 {
+  text-align: left;
+  margin: 0;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  line-height: 1.15;
+}
+.faq-layout .faq-list { max-width: none; margin: 0; }
+.faq-media { order: -1; }                      /* image first on mobile */
+.faq-figure {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-card);
+  aspect-ratio: 4 / 5;
+}
+.faq-figure img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+@media (min-width: 900px) {
+  .faq-layout { grid-template-columns: 1.05fr 0.95fr; gap: clamp(40px, 6vw, 72px); }
+  .faq-media { order: 0; }                      /* image on the right on desktop */
+  .faq-figure { aspect-ratio: 3 / 4; }
+}
+
 /* === Final CTA === */
 .final {
   text-align: center;
