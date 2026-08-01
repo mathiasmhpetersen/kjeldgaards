@@ -62,7 +62,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom CSS (versioned to bust the 1yr cache on deploy) -->
-  <link rel="stylesheet" href="/barrier-defense-serum/styles.css?v=12" />
+  <link rel="stylesheet" href="/barrier-defense-serum/styles.css?v=13" />
 
   <!-- Critical guard: lives in the always-fresh HTML so a stale/cached
        stylesheet can never blow up inline SVGs or the rotator again. -->
@@ -460,12 +460,15 @@
          ============================================================ -->
     <section class="section section--paper">
       <div class="wrap reveal">
-        <div style="text-align:center; margin: 0 auto 32px;">
-          <hr class="gold-rule gold-rule--center" />
-          <h2>Ofte stillede spørgsmål</h2>
-        </div>
+        <div class="faq-layout">
+          <div class="faq-col">
+            <div class="faq-head">
+              <p class="eyebrow">Bliv klogere</p>
+              <hr class="gold-rule" />
+              <h2>Ofte stillede <span class="accent-italic">spørgsmål &amp; svar</span></h2>
+            </div>
 
-        <div class="faq-list">
+            <div class="faq-list">
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Kan den bruges af alle hudtyper?<span class="icon" aria-hidden="true"></span></button>
             <div class="faq-a"><div class="faq-a-inner">Ja — normal, tør, fedtet, kombineret og følsom hud. Har du meget følsom hud, så start med hver anden aften og lav en patch-test.</div></div>
@@ -497,6 +500,14 @@
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Skal jeg bruge creme efter?<span class="icon" aria-hidden="true"></span></button>
             <div class="faq-a"><div class="faq-a-inner">Den giver dyb fugt, så det er individuelt. Har du tør hud, så følg op med en fugtighedscreme. Brug ikke andre retinoid-produkter sammen med den, og brug den ikke under graviditet.</div></div>
+          </div>
+            </div>
+          </div>
+
+          <div class="faq-media">
+            <figure class="faq-figure">
+              <img src="/barrier-defense-serum/assets/faq-morten.webp" alt="Morten Kjeldgaard med Barrier Defense Serum til lanceringen" width="1000" height="1333" loading="lazy" decoding="async" />
+            </figure>
           </div>
         </div>
       </div>
