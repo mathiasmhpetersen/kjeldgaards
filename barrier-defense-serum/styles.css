@@ -256,7 +256,7 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
