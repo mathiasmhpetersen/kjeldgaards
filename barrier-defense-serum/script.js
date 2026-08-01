@@ -292,7 +292,7 @@
     var lastFocus = null;
 
     // graphics with baked-in text should never be cropped
-    function isContain(i) { return /reviews|klinisk|before-after/.test(images[i].full); }
+    function isContain(i) { return /reviews|klinisk|before-after|sammenligning/.test(images[i].full); }
 
     function fadeSwap(el, src, alt) {
       if (reduceMotion) { el.src = src; el.alt = alt; return; }
