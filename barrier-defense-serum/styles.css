@@ -1253,7 +1253,19 @@ a:hover { color: var(--marine-700); text-decoration: underline; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #fff;
-  margin: 0 0 14px;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  position: relative;
+}
+.site-footer h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--messing);
+  border-radius: 999px;
 }
 .site-footer .brand-mark { color: #fff; font-size: 22px; display: inline-block; margin-bottom: 12px; }
 .site-footer p { margin: 0 0 8px; color: #B7C3CC; font-size: 14px; }
